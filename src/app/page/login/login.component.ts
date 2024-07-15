@@ -1,26 +1,22 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService} from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   mensajeLogin: string = '';
-
-  loginForm!: FormGroup ;
+  loginForm!: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
-    private router : Router
+    private router: Router
   ) {
-
-    if(localStorage.getItem('token')){
+    // Redirigir si ya está autenticado
+    if (localStorage.getItem('token')) {
       this.router.navigate(['/app/cliente']);
     }
   }
@@ -30,8 +26,6 @@ export class LoginComponent {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
-
   }
 
   login(): void {
@@ -39,54 +33,14 @@ export class LoginComponent {
       return;
     }
 
+    // Simular un inicio de sesión exitoso
     const { username, password } = this.loginForm.value;
-    
-    this.loginService.login(username, password)
-      .subscribe(
-        response => {
-          console.log('Inicio de sesión exitoso', response);
-          const { code, data } = response;
+    console.log('Simulación de inicio de sesión exitoso', { username, password });
 
-          console.log(code, data, response.data);
-
-          switch (response.code) {
-            case 403:
-              this.mensajeLogin = response.data;
-              break;
-            case 200:
-              this.mensajeLogin = response.data;
-              this.router.navigate(['/app/cliente']);
-              console.log("se r")
-              break;
-            case 401:
-              this.mensajeLogin = response.data;
-              break;
-            case 400:
-              this.mensajeLogin = response.data;
-              break;
-            case 500:
-              this.mensajeLogin = response.data;
-              break;
-            default:
-              console.log('Error en inicio de sesión');
-              break;
-          }
-
-
-        },
-        error => {
-          console.error('Error en inicio de sesión', error);
-          if (error instanceof HttpErrorResponse) {
-            console.error('Estado:', error.status);
-            console.error('Texto:', error.statusText);
-            // Muestra el mensaje de error al usuario
-            alert(error.error);
-          }
-        }
-      );
-
-
-
+    // Aquí puedes agregar cualquier lógica adicional si es necesario
+    // Simular una respuesta del servidor con código 200
+    this.mensajeLogin = 'Inicio de sesión exitoso';
+    localStorage.setItem('token', 'fake-jwt-token'); // Simular el almacenamiento de un token
+    this.router.navigate(['/app/cliente']);
   }
-
 }

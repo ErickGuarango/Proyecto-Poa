@@ -1,40 +1,16 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../env/env';
-import { Observable, tap } from 'rxjs';
+import { Observable, of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private URL_API: string = environment.ApiUrl + '/facturacion/login';
 
-  constructor(private http: HttpClient) { }
-
-  
+  constructor() { }
 
   login(username: string, password: string): Observable<any> {
-
-    const params = { username: username, password: password };
-
-     return this.http.get<any>(this.URL_API, { 
-      params: params 
-    }).pipe(
-        tap( response => {
-          if(response.code == 200){
-            localStorage.setItem('token', response.data);
-          }
-          
-        }
-      )
-     );
-     
+    // Aquí simulas una respuesta exitosa con código 200 y un mensaje de éxito.
+    const fakeResponse = { code: 200, data: 'Inicio de sesión exitoso' };
+    return of(fakeResponse); // Simula una respuesta observable exitosa
   }
-
-  // isLoggedIn(): boolean {
-  //   // return !!localStorage.getItem('token');
-  //   return false
-  // }
-
-  
-
 }
