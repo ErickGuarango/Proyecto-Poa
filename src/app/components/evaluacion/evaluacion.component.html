@@ -1,0 +1,56 @@
+<div class="table-container">
+    <p class="rojo">
+      Actividades de Evaluador
+    </p>
+  
+    <div class="Buscar">
+      <label for="filtroFecha">Buscar por fecha:</label>
+      <input type="number" id="filtroAnio" class="input-rounded" placeholder="Año" [(ngModel)]="filtroAnio">
+      <input type="number" id="filtroMes" class="input-rounded" placeholder="Mes" [(ngModel)]="filtroMes">
+      <input type="number" id="filtroDia" class="input-rounded" placeholder="Día" [(ngModel)]="filtroDia">
+      <button class="button-buscar" (click)="buscarPorFecha()">Buscar</button>
+    </div>
+  
+    <div class="separador">
+      <div>
+        <table class="evaluation-table">
+          <thead>
+            <tr>
+              <th>Fecha de entrega</th>
+              <th>Actividad</th>
+              <th>Docente Responsable</th>
+              <th>Descripción</th>
+              <th>Entregable</th>
+              <th>% Ejecutado</th>
+              <th>Costos fijos</th>
+              <th>Horas estimadas</th>
+              <th>Horas actuales</th>
+              <th>Observación</th>
+              <th>Acciones</th> <!-- New column for actions -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let evaluacion of evaluacionesFiltradas">
+              <td>{{ evaluacion.fechaEntrega }}</td>
+              <td>{{ evaluacion.actividad }}</td>
+              <td>{{ evaluacion.docenteResponsable }}</td>
+              <td>{{ evaluacion.descripcion }}</td>
+              <td class="deliverable">
+                <a [href]="evaluacion.entregable" target="_blank" download>📄 Descargar PDF</a>
+              </td>
+              <td><input type="number" [(ngModel)]="evaluacion.porcentajeEjecutado" class="input-rounded"></td>
+              <td>{{ evaluacion.costosFijos }}</td>
+              <td>{{ evaluacion.horasEstimadas }}</td>
+              <td>{{ evaluacion.horasActuales }}</td>
+              <td><input type="text" [(ngModel)]="evaluacion.observacion" class="input-rounded"></td>
+              <td>
+                <button class="guardar-button">Guardar</button>
+                <button class="editar-button">Editar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
