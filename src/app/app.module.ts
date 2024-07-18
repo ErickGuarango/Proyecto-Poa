@@ -7,11 +7,10 @@ import { ClienteComponent } from './page/cliente/cliente.component';
 import { ProductoComponent } from './page/Rutas/producto.component';
 import { FacturaComponent } from './page/factura/factura.component';
 import { MenuComponent } from './components/menu/menu.component';
-
 import { Cod404Component } from './components/cod404/cod404.component';
 import { NuevoComponent } from './components/clientes/nuevo/nuevo.component';
 import { HomeClienteComponent } from './components/clientes/home-cliente/home-cliente.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule aquí
 import { HomeProductoComponent } from './components/productos/home-producto/home-producto.component';
 import { NuevoProductoComponent } from './components/productos/nuevo-producto/nuevo-producto.component';
 import { EditarClienteComponent } from './components/clientes/editar-cliente/editar-cliente.component';
@@ -21,6 +20,7 @@ import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
+import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component'; // Asegúrate de importar tu componente
 
 @NgModule({
   declarations: [
@@ -40,17 +40,15 @@ import { EvaluacionComponent } from './components/evaluacion/evaluacion.componen
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
-   
-
-    
+    RegistroDocenteComponent // Asegúrate de declarar tu componente aquí
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
+    FormsModule, // Asegúrate de importar FormsModule aquí
     ReactiveFormsModule,
-    // PageModule
+    // PageModule // Descomentarlo si es necesario
   ],
   providers: [],
   bootstrap: [AppComponent]

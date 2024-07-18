@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms'; // Asegúrate de importar NgForm aquí
-
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-registro-docente',
@@ -8,12 +7,10 @@ import { NgForm } from '@angular/forms'; // Asegúrate de importar NgForm aquí
   styleUrls: ['./registro-docente.component.css']
 })
 export class RegistroDocenteComponent {
-
   onSubmit(form: NgForm) {
     if (form.valid) {
       // Aquí podrías enviar los datos del formulario al servidor o hacer alguna otra acción
       console.log(form.value);
     }
   }
-
 }
