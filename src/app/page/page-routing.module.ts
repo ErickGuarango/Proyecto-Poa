@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductoComponent } from './Rutas/producto.component';
+import { ProductoComponent } from './producto/producto.component';
 import { FacturaComponent } from './factura/factura.component';
 import { NuevoComponent } from '../components/clientes/nuevo/nuevo.component';
 import { NuevoProductoComponent } from '../components/productos/nuevo-producto/nuevo-producto.component';
@@ -8,7 +8,7 @@ import { Cod404Component } from '../components/cod404/cod404.component';
 import { ClienteComponent } from './cliente/cliente.component';
 import { HomeClienteComponent } from '../components/clientes/home-cliente/home-cliente.component';
 import { ListaFacturasComponent } from '../components/facturas/lista-facturas/lista-facturas.component';
-import { EvaluacionComponent } from '../components/evaluacion/evaluacion.component'; 
+import { EvaluacionComponent } from '../components/evaluacion/evaluacion.component';
 
 const routes: Routes = [
 
