@@ -9,6 +9,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { HomeClienteComponent } from '../components/clientes/home-cliente/home-cliente.component';
 import { ListaFacturasComponent } from '../components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from '../components/evaluacion/evaluacion.component'; 
+import { DocUnidadComponent } from '../components/doc-unidad/doc-unidad.component';
 
 const routes: Routes = [
 
@@ -36,8 +37,11 @@ const routes: Routes = [
       path: 'lista-factura',
       component: ListaFacturasComponent
     },
-    { path: 'evaluacion', component: EvaluacionComponent },
-    { path: 'unidad', component: EvaluacionComponent }
+    { path: 'evaluacion', component:
+       EvaluacionComponent },
+
+    { path: 'unidad', component: 
+      DocUnidadComponent }
    
 
     
