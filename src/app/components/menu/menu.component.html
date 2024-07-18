@@ -5,12 +5,12 @@
       <details>
         <summary>ADMIN</summary>
         <li>
-          <button routerLink="/app/cliente" routerLinkActive="underline">
+          <button routerLink="/app/cliente" routerLinkActive="underline" (click)="activateButton($event)">
             📝 Docentes
           </button>
         </li>
         <li>
-          <button routerLink="/app/cliente" routerLinkActive="underline">
+          <button routerLink="/app/cliente" routerLinkActive="underline" (click)="activateButton($event)">
             📋 Registrar Evaluador
           </button>
         </li>
@@ -18,12 +18,12 @@
       <details>
         <summary>Catálogos</summary>
         <li>
-          <button routerLinkActive="underline" [routerLinkActiveOptions]="{ exact: true }" routerLink="/app/unidad">
+          <button routerLinkActive="underline" [routerLinkActiveOptions]="{ exact: true }" routerLink="/app/unidad" (click)="activateButton($event)">
             📁 Unidad
           </button>
         </li>
         <li>
-          <button routerLink="/app/producto" routerLinkActive="underline">
+          <button routerLink="/app/producto" routerLinkActive="underline" (click)="activateButton($event)">
             🛒 Carrera
           </button>
         </li>
@@ -31,12 +31,12 @@
       <details>
         <summary>Evaluacion</summary>
         <li>
-          <button routerLink="/app/evaluacion" routerLinkActive="underline">
+          <button routerLink="/app/evaluacion" routerLinkActive="underline" (click)="activateButton($event)">
             📝 Registro de Evaluadoror
           </button>
         </li>
         <li>
-          <button routerLink="/app/lista-factura" routerLinkActive="underline">
+          <button routerLink="/app/lista-factura" routerLinkActive="underline" (click)="activateButton($event)">
             📋 Ver reportes
           </button>
         </li>

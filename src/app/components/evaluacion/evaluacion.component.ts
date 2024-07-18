@@ -48,21 +48,24 @@ export class EvaluacionComponent {
 
   evaluacionesFiltradas: Evaluacion[] = [...this.evaluaciones]; // Copia inicial de evaluaciones
 
-  filtroAnio = 0;
-  filtroMes=0;
-  filtroDia = 0;
+  filtroFecha: string = '';
 
   constructor() {}
 
   buscarPorFecha() {
-    if (this.filtroAnio && this.filtroMes && this.filtroDia) {
-      const fechaBusqueda = `${this.filtroAnio}/${this.filtroMes}/${this.filtroDia}`;
-      this.evaluacionesFiltradas = this.evaluaciones.filter(evaluacion =>
-        evaluacion.fechaEntrega.includes(fechaBusqueda)
-      );
+    if (this.filtroFecha.trim() !== '') {
+      // Convertir el filtro de fecha en formato dd/mm/yyyy a yyyy/mm/dd
+      const partesFecha = this.filtroFecha.split('/');
+      if (partesFecha.length === 3) {
+        const fechaBusqueda = `${partesFecha[2]}/${partesFecha[1]}/${partesFecha[0]}`;
+        this.evaluacionesFiltradas = this.evaluaciones.filter(evaluacion =>
+          evaluacion.fechaEntrega.includes(fechaBusqueda)
+        );
+      } else {
+        console.log('El formato de fecha ingresado no es válido.');
+      }
     } else {
-      // Si falta algún campo de fecha, mostrar un mensaje o manejar el caso según tus requisitos
-      console.log('Debe ingresar todos los campos de fecha para buscar.');
+      console.log('Debe ingresar una fecha para buscar.');
     }
   }
 }
