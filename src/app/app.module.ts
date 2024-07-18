@@ -20,7 +20,8 @@ import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
-import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component'; // Asegúrate de importar tu componente
+import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
+import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component'; // Asegúrate de importar tu componente
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RegistroDocenteComponent } from './components/registro-docente/registro
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
-    RegistroDocenteComponent // Asegúrate de declarar tu componente aquí
+    RegistroDocenteComponent,
+    RegistroCarrerasComponent // Asegúrate de declarar tu componente aquí
   ],
   imports: [
     BrowserModule,

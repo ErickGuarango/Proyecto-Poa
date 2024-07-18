@@ -10,6 +10,8 @@ import { HomeClienteComponent } from '../components/clientes/home-cliente/home-c
 import { ListaFacturasComponent } from '../components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from '../components/evaluacion/evaluacion.component'; 
 import { DocUnidadComponent } from '../components/doc-unidad/doc-unidad.component';
+import { RegistroCarrerasComponent } from '../components/registro-carreras/registro-carreras.component';
+
 
 const routes: Routes = [
 
@@ -41,7 +43,10 @@ const routes: Routes = [
        EvaluacionComponent },
 
     { path: 'unidad', component: 
-      DocUnidadComponent }
+      DocUnidadComponent },
+
+      { path: 'registro-carreras', component:
+         RegistroCarrerasComponent }
    
 
     

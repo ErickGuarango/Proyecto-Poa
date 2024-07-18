@@ -1,0 +1,46 @@
+<div class="registro-container">
+    <div class="form-section">
+      <p class="titulo-formulario">Ingreso de Carreras</p>
+      <form (submit)="agregarCarrera()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="nuevaCarrera.nombre" name="nombre" required>
+        
+        <label for="periodoInicio">Periodo (mes de inicio):</label>
+        <input type="text" id="periodoInicio" [(ngModel)]="nuevaCarrera.periodoInicio" name="periodoInicio" required placeholder="Ej: Marzo">
+        
+        <label for="periodoFin">Periodo (mes de fin):</label>
+        <input type="text" id="periodoFin" [(ngModel)]="nuevaCarrera.periodoFin" name="periodoFin" required placeholder="Ej: Abril">
+        
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" [(ngModel)]="nuevaCarrera.descripcion" name="descripcion" required></textarea>
+        
+        <button type="submit">Agregar</button>
+      </form>
+    </div>
+  
+    <div class="list-section">
+      <p class="titulo-lista">Lista de Carreras</p>
+      <table class="evaluation-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Periodo</th>
+            <th>Descripción</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let carrera of carreras">
+            <td>{{ carrera.nombre }}</td>
+            <td>{{ carrera.periodoInicio }} a {{ carrera.periodoFin }}</td>
+            <td>{{ carrera.descripcion }}</td>
+            <td>
+              <button (click)="editarCarrera(carrera)">Editar</button>
+              <button (click)="eliminarCarrera(carrera)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
