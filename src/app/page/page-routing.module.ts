@@ -36,8 +36,7 @@ const routes: Routes = [
       path: 'lista-factura',
       component: ListaFacturasComponent
     },
-    { path: 'evaluacion', component: EvaluacionComponent },
-    { path: 'unidad', component: EvaluacionComponent }
+    { path: 'evaluacion', component: EvaluacionComponent }
    
 
     
