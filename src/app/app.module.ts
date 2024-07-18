@@ -21,6 +21,7 @@ import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
+import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EvaluacionComponent } from './components/evaluacion/evaluacion.componen
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
+    DocUnidadComponent,
    
 
     
