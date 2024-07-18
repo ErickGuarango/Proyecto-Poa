@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './page/cliente/cliente.component';
-import { ProductoComponent } from './page/producto/producto.component';
+import { ProductoComponent } from './page/Rutas/producto.component';
 import { FacturaComponent } from './page/factura/factura.component';
 import { MenuComponent } from './components/menu/menu.component';
 
@@ -21,7 +21,6 @@ import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
-import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +40,6 @@ import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
-    DocUnidadComponent,
    
 
     
