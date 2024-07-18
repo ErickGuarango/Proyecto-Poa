@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClienteComponent } from './page/cliente/cliente.component';
-import { ProductoComponent } from './page/producto/producto.component';
+import { ProductoComponent } from './page/Rutas/producto.component';
 import { FacturaComponent } from './page/factura/factura.component';
 import { Cod404Component } from './components/cod404/cod404.component';
 import { NuevoComponent } from './components/clientes/nuevo/nuevo.component';

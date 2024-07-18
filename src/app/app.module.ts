@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClienteComponent } from './page/cliente/cliente.component';
-import { ProductoComponent } from './page/producto/producto.component';
+import { ProductoComponent } from './page/Rutas/producto.component';
 import { FacturaComponent } from './page/factura/factura.component';
 import { MenuComponent } from './components/menu/menu.component';
 
