@@ -46,7 +46,8 @@ const routes: Routes = [
       DocUnidadComponent },
 
       { path: 'registro-carreras', component:
-         RegistroCarrerasComponent }
+         RegistroCarrerasComponent },
+         
    
 
     

@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 
 interface Carrera {
   nombre: string;
+  coordinacion: string;
   periodoInicio: string;
   periodoFin: string;
-  descripcion: string;
+  director: string;
 }
 
 @Component({
@@ -14,15 +15,27 @@ interface Carrera {
 })
 export class RegistroCarrerasComponent {
   carreras: Carrera[] = [];
-  nuevaCarrera: Carrera = { nombre: '', periodoInicio: '', periodoFin: '', descripcion: '' };
+  nuevaCarrera: Carrera = {
+    nombre: '',
+    coordinacion: '',
+    periodoInicio: '',
+    periodoFin: '',
+    director: ''
+  };
 
   agregarCarrera() {
     this.carreras.push({ ...this.nuevaCarrera });
-    this.nuevaCarrera = { nombre: '', periodoInicio: '', periodoFin: '', descripcion: '' };
+    this.nuevaCarrera = {
+      nombre: '',
+      coordinacion: '',
+      periodoInicio: '',
+      periodoFin: '',
+      director: ''
+    };
   }
 
   editarCarrera(carrera: Carrera) {
-    // lógica para editar la carrera
+    // Lógica para editar una carrera
   }
 
   eliminarCarrera(carrera: Carrera) {

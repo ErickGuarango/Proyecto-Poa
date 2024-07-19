@@ -1,46 +1,54 @@
-<div class="registro-container">
-    <div class="form-section">
-      <p class="titulo-formulario">Ingreso de Carreras</p>
-      <form (submit)="agregarCarrera()">
+<div class="container">
+  <div class="table-container form-section">
+    <p class="azul">Ingreso de Carreras</p>
+    <form (submit)="agregarCarrera()">
+      <div class="form-group">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" [(ngModel)]="nuevaCarrera.nombre" name="nombre" required>
-        
-        <label for="periodoInicio">Periodo (mes de inicio):</label>
-        <input type="text" id="periodoInicio" [(ngModel)]="nuevaCarrera.periodoInicio" name="periodoInicio" required placeholder="Ej: Marzo">
-        
-        <label for="periodoFin">Periodo (mes de fin):</label>
-        <input type="text" id="periodoFin" [(ngModel)]="nuevaCarrera.periodoFin" name="periodoFin" required placeholder="Ej: Abril">
-        
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" [(ngModel)]="nuevaCarrera.descripcion" name="descripcion" required></textarea>
-        
-        <button type="submit">Agregar</button>
-      </form>
-    </div>
-  
-    <div class="list-section">
-      <p class="titulo-lista">Lista de Carreras</p>
-      <table class="evaluation-table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Periodo</th>
-            <th>Descripción</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let carrera of carreras">
-            <td>{{ carrera.nombre }}</td>
-            <td>{{ carrera.periodoInicio }} a {{ carrera.periodoFin }}</td>
-            <td>{{ carrera.descripcion }}</td>
-            <td>
-              <button (click)="editarCarrera(carrera)">Editar</button>
-              <button (click)="eliminarCarrera(carrera)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+        <input type="text" id="nombre" [(ngModel)]="nuevaCarrera.nombre" name="nombre" class="input-rounded" required>
+      </div>
+      <div class="form-group">
+        <label for="coordinacion">Coordinación:</label>
+        <input type="text" id="coordinacion" [(ngModel)]="nuevaCarrera.coordinacion" name="coordinacion" class="input-rounded" required>
+      </div>
+      <div class="form-group">
+        <label for="periodoInicio">Periodo Inicio:</label>
+        <input type="month" id="periodoInicio" [(ngModel)]="nuevaCarrera.periodoInicio" name="periodoInicio" class="input-rounded" required>
+      </div>
+      <div class="form-group">
+        <label for="periodoFin">Periodo Fin:</label>
+        <input type="month" id="periodoFin" [(ngModel)]="nuevaCarrera.periodoFin" name="periodoFin" class="input-rounded" required>
+      </div>
+      <div class="form-group">
+        <label for="director">Director:</label>
+        <input type="text" id="director" [(ngModel)]="nuevaCarrera.director" name="director" class="input-rounded" required>
+      </div>
+      <button type="submit" class="button-agregar">Agregar</button>
+    </form>
   </div>
-  
+  <div class="table-container">
+    <p class="azul">Lista de Carreras</p>
+    <table class="evaluation-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Coordinación</th>
+          <th>Periodo</th>
+          <th>Director</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let carrera of carreras">
+          <td>{{ carrera.nombre }}</td>
+          <td>{{ carrera.coordinacion }}</td>
+          <td>{{ carrera.periodoInicio | date: 'MMMM yyyy' }} - {{ carrera.periodoFin | date: 'MMMM yyyy' }}</td>
+          <td>{{ carrera.director }}</td>
+          <td>
+            <button class="editar-button" (click)="editarCarrera(carrera)">Editar</button>
+            <button class="eliminar-button" (click)="eliminarCarrera(carrera)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

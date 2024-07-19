@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 class="form-title">Ingreso de Unidad</h2>
+    <div class="form-container">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" [(ngModel)]="nuevaUnidad.nombre" />
+  
+      <label for="coordinacion">Coordinación:</label>
+      <input type="text" id="coordinacion" [(ngModel)]="nuevaUnidad.coordinacion" />
+  
+      <label for="director">Director:</label>
+      <input type="text" id="director" [(ngModel)]="nuevaUnidad.director" />
+  
+      <button (click)="agregarUnidad()">Agregar Unidad</button>
+    </div>
+  
+    <h2 class="list-title">Lista de Unidades</h2>
+    <div class="table-container">
+      <table class="evaluation-table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Coordinación</th>
+            <th>Director</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let unidad of unidades; let i = index">
+            <td>{{ unidad.nombre }}</td>
+            <td>{{ unidad.coordinacion }}</td>
+            <td>{{ unidad.director }}</td>
+            <td>
+              <button (click)="editarUnidad(i)" class="editar-button">Editar</button>
+              <button (click)="eliminarUnidad(i)" class="eliminar-button">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

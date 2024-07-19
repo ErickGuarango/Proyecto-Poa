@@ -21,7 +21,8 @@ import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
-import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component'; // Asegúrate de importar tu componente
+import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
+import { RegistroUnidadComponent } from './components/registro-unidad/registro-unidad.component'; // Asegúrate de importar tu componente
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { RegistroCarrerasComponent } from './components/registro-carreras/regist
     ListaFacturasComponent,
     EvaluacionComponent,
     RegistroDocenteComponent,
-    RegistroCarrerasComponent // Asegúrate de declarar tu componente aquí
+    RegistroCarrerasComponent,
+    RegistroUnidadComponent // Asegúrate de declarar tu componente aquí
   ],
   imports: [
     BrowserModule,
