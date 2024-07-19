@@ -1,4 +1,4 @@
-/* Estilos para el componente de tabla */
+/* Estilos para el contenedor principal */
 .table-container {
   width: 97%;
   height: 100%;
@@ -9,8 +9,8 @@
   padding: 20px;
 }
 
-/* Estilos para el título */
-.table-container .titulo {
+/* Estilos para el encabezado */
+.header {
   background-color: rgb(226, 68, 68);
   color: #fff;
   width: 100%;
@@ -21,86 +21,57 @@
   justify-content: left;
   align-items: center;
   padding-left: 20px;
-  font-size: 20px;
   font-weight: bold;
+  padding: 10px 20px;
 }
 
-/* Estilos para el contenedor de búsqueda */
-.buscar {
-  margin: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-/* Estilos para la etiqueta de búsqueda */
-.buscar label {
-  font-weight: 600;
-  margin-right: 10px;
-}
-
-/* Estilos para el campo de entrada de búsqueda */
-.buscar input {
-  width: 150px;
-  height: 30px;
-  margin: 10px 0;
-  border: 1px solid rgb(182, 182, 182);
-  border-radius: 20px;
-  padding-left: 10px;
-  font-size: 14px;
-}
-
-/* Estilos para el botón de buscar */
-.buscar button {
-  background-color: rgb(67, 164, 255);
+/* Estilos para el título rojo */
+.table-container .rojo {
+  background-color: rgb(226, 68, 68);
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-left: 10px;
+  width: 100%;
+  height: 50px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 20px;
 }
 
-/* Estilos hover para el botón de buscar */
-.buscar button:hover {
-  background-color: rgb(51, 131, 204);
-}
-
-/* Estilos para la tabla de evaluación */
-.evaluation-table {
+/* Estilos para las tablas */
+table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 8px;
   margin-top: 20px;
 }
 
 /* Estilos para las celdas de la tabla */
-.evaluation-table th,
-.evaluation-table td {
+table th, table td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
 /* Estilos para los encabezados de la tabla */
-.evaluation-table th {
+table th {
   background-color: #f2f2f2;
   color: #333;
 }
 
 /* Estilos para filas impares de la tabla */
-.evaluation-table tbody tr:nth-child(odd) {
+table tbody tr:nth-child(odd) {
   background-color: #f2f8ff;
 }
 
 /* Estilos hover para filas de la tabla */
-.evaluation-table tbody tr:hover {
+table tbody tr:hover {
   background-color: #f1f1f1;
 }
 
-/* Estilos para los botones de acción en las celdas */
-td button {
-  background-color: rgb(67, 164, 255);
+/* Estilos para los botones */
+button {
+  background-color: rgb(67, 164, 255); /* Azul */
   color: white;
   border: none;
   border-radius: 5px;
@@ -112,29 +83,66 @@ td button {
   margin-bottom: 5px;
 }
 
-/* Estilos específicos para el botón de guardar */
-td button.guardar-button {
-  background-color: rgb(72, 187, 120);
-}
-
 /* Estilos hover para los botones */
-td button:hover {
-  background-color: rgb(51, 131, 204);
-}
-
-/* Estilos hover para el botón de guardar */
-td button.guardar-button:hover {
-  background-color: rgb(58, 150, 95);
+button:hover {
+  background-color: rgb(51, 131, 204); 
 }
 
 /* Estilos para campos de entrada redondeados */
 .input-rounded {
+  width: 100%;
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 5px;
+  margin-bottom: 10px;
 }
 
-/* Estilos adicionales para la tabla */
-tbody tr {
-  margin-bottom: 10px;
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.crear-guardar-button {
+  margin-left: 10px;
+}
+
+/* Estilos para la primera mitad de la tabla */
+.half-table-container {
+  width: 105%;
+}
+
+.info-container {
+  text-align: center;
+  margin-top: 10px; /* Espacio entre la información y la tabla */
+}
+
+.info-left, .info-right {
+  display: inline-block; 
+  margin-left: 20px; 
+}
+
+.file-input-label {
+  display: inline-block;
+  padding: 16px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-label:hover {
+  background-color: #5a9de4;
+}
+
+.file-input-label svg {
+  width: 2em; /* Ajusta el tamaño del SVG */
+  height: 2em;
+}
+
+.input-file {
+  display: none; /* Ocultar el input de tipo file */
+}
+
+.campo-container {
+  flex-wrap: wrap;
 }
