@@ -11,6 +11,7 @@ import { ListaFacturasComponent } from '../components/facturas/lista-facturas/li
 import { EvaluacionComponent } from '../components/evaluacion/evaluacion.component'; 
 import { DocUnidadComponent } from '../components/doc-unidad/doc-unidad.component';
 import { RegistroCarrerasComponent } from '../components/registro-carreras/registro-carreras.component';
+import { RegistroUnidadComponent } from '../components/registro-unidad/registro-unidad.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,8 @@ const routes: Routes = [
 
       { path: 'registro-carreras', component:
          RegistroCarrerasComponent },
+         { path: 'registro-unidad', component:
+          RegistroUnidadComponent },
          
    
 
