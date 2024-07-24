@@ -11,12 +11,19 @@ import { MenuComponent } from './components/menu/menu.component';
 import { AuthGuard } from './guards/guard.guard';
 import { loginGuard } from './guards/login.guard';
 //import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
+import { FormComponent } from './components/usuarios/form.component';
+import { UsuarioComponent } from './components/usuarios/usuarios.component';
 
 
 
 const routes: Routes = [
 //{path: 'registro-docente', 
   //component: RegistroDocenteComponent },
+  
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirige a 'home' al iniciar la aplicación
+
+  {path: 'usuarios/form', component: FormComponent },
+  {path: 'usuarios', component: UsuarioComponent },
   {
     path: '',
     component: MenuComponent,

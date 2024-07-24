@@ -23,6 +23,11 @@ import { EvaluacionComponent } from './components/evaluacion/evaluacion.componen
 //import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
 import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from './components/registro-unidad/registro-unidad.component'; // Asegúrate de importar tu componente
+import { UsuarioService } from './components/usuarios/usuario.service';
+import { UsuarioComponent } from './components/usuarios/usuarios.component'; // Asegúrate de importar tu componente
+import { RolesService } from './components/roles/roles.service';
+import { RouterModule } from '@angular/router';
+import { FormComponent } from './components/usuarios/form.component';
 
 import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
 
@@ -47,7 +52,12 @@ import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component
    // RegistroDocenteComponent, 
     RegistroCarrerasComponent,
     RegistroUnidadComponent, // Asegúrate de declarar tu componente aquí
- DocUnidadComponent
+ DocUnidadComponent,
+ UsuarioComponent,
+ FormComponent,
+
+  // Asegúrate de declarar tu componente aquí
+
   ],
   imports: [
     BrowserModule,
@@ -58,7 +68,7 @@ import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component
     
     // PageModule // Descomentarlo si es necesario
   ],
-  providers: [],
+  providers: [UsuarioService,RolesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
