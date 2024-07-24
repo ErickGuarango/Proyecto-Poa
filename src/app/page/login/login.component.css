@@ -1,5 +1,9 @@
+
+
 .container-login {
-  background-color: #36434f;
+  background: url('../../../assets/FondoAzuay.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-position: center left;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -10,8 +14,10 @@
 .container-login .contenido {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0); /* Fondo blanco con transparencia */
   width: 60%;
+ 
+
   height: 80%;
   border-radius: 15px;
 }
@@ -25,11 +31,16 @@
 }
 
 .container-login .contenido .imagen img {
+
   width: 70%;
+  height: auto;
+  border: none;
+  box-shadow: none;
 }
 
 .container-login .contenido .login-container h2 {
   margin-bottom: 40px;
+  color: #e6e6e6;
 }
 
 .container-login .contenido .login-container form {
