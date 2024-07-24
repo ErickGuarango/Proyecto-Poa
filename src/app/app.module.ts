@@ -20,15 +20,12 @@ import { PageModule } from './page/page.module';
 import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
 import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
-import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
+//import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
 import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from './components/registro-unidad/registro-unidad.component'; // Asegúrate de importar tu componente
-<<<<<<< HEAD
 
-
-=======
 import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
->>>>>>> 8a0a7c0350d4fdfde857f551ca93ee63495abcf6
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +44,7 @@ import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
-    RegistroDocenteComponent, 
+   // RegistroDocenteComponent, 
     RegistroCarrerasComponent,
     RegistroUnidadComponent, // Asegúrate de declarar tu componente aquí
  DocUnidadComponent

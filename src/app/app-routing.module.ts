@@ -10,13 +10,13 @@ import { LoginComponent } from './page/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { AuthGuard } from './guards/guard.guard';
 import { loginGuard } from './guards/login.guard';
-import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
+//import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
 
 
 
 const routes: Routes = [
-{path: 'registro-docente', 
-  component: RegistroDocenteComponent },
+//{path: 'registro-docente', 
+  //component: RegistroDocenteComponent },
   {
     path: '',
     component: MenuComponent,
