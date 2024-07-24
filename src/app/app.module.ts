@@ -23,7 +23,7 @@ import { EvaluacionComponent } from './components/evaluacion/evaluacion.componen
 import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
 import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from './components/registro-unidad/registro-unidad.component'; // Asegúrate de importar tu componente
-
+import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,9 +42,10 @@ import { RegistroUnidadComponent } from './components/registro-unidad/registro-u
     CabfacturaComponent,
     ListaFacturasComponent,
     EvaluacionComponent,
-    RegistroDocenteComponent,
+    RegistroDocenteComponent, 
     RegistroCarrerasComponent,
-    RegistroUnidadComponent // Asegúrate de declarar tu componente aquí
+    RegistroUnidadComponent, // Asegúrate de declarar tu componente aquí
+ DocUnidadComponent
   ],
   imports: [
     BrowserModule,
