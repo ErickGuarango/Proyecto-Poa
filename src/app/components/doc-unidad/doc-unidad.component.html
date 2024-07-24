@@ -1,80 +1,86 @@
 <div class="table-container">
-    <p class="rojo">Documentación de la Unidad</p>
+  <p class="rojo">Documentación de la Unidad</p>
   
-    <div class="half-table-container">
-      <table class="evaluation-table">
-        <tr>
-          <td colspan="3">Carrera: Desarrollo de Software<br>Año: 2024</td>
-          <div class="info-container">
-            <div class="info-left">
-              <label for="unidadInput">Unidad:</label>
-              <input type="text" id="unidadInput" class="input-rounded" placeholder="Ingrese la unidad...">
-            </div>
-            <div class="info-right">
-              <label for="periodoInput">Periodo:</label>
-              <input type="text" id="periodoInput" class="input-rounded" placeholder="Ingrese el periodo...">
-            </div>
-          </div>
-        </tr>
-        <tr>
-          <td>Objetivo Estratégico:</td>
-          <td colspan="2"><input type="text" class="input-rounded"></td>
-        </tr>
-        <tr>
-          <td>Estrategia:</td>
-          <td colspan="2">
-            <input type="text" class="input-rounded">
-            <button id="nuevoButton">Nuevo</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Objetivo Operativo:</td>
-          <td colspan="2">
-            <input type="text" class="input-rounded">
-            <button id="addRowButton">+</button>
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div class="button-group">
-      <button class="crear-guardar-button">Crear o guardar</button>
-    </div>
-  
-    <table class="table-design" id="actividadesTable">
+  <div class="half-table-container">
+    <table class="evaluation-table">
       <tr>
-        <th>Actividades</th>
-        <th>Responsable</th>
-        <th>Plazo</th>
-        <th>Evidencia</th>
-        <th>Meta %</th>
-        <th>Recursos Financieros</th>
+        <td colspan="3">Carrera: Desarrollo de Software<br>Año: 2024</td>
+        <div class="info-container">
+          <div class="info-left">
+            <label for="unidadInput">Unidad:</label>
+            <input type="text" id="unidadInput" class="input-rounded" placeholder="Ingrese la unidad...">
+          </div>
+          <div class="info-right">
+            <label for="periodoInput">Periodo:</label>
+            <input type="text" id="periodoInput" class="input-rounded" placeholder="Ingrese el periodo...">
+          </div>
+        </div>
       </tr>
-      <tr *ngFor="let row of rows">
-        <td>{{ row.counter }}</td>
-        <td><input type="text" class="input-rounded"></td>
-        <td><input type="text" class="input-rounded"></td>
-        <td>
-          <label for="fileInput{{row.counter}}" class="file-input-label">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <path d="M19.5 12c-2.483 0-4.5 2.015-4.5 4.5s2.017 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.017-4.5-4.5-4.5zm2.5 5h-2v2h-1v-2h-2v-1h2v-2h1v2h2v1zm-18 0l4-5.96 2.48 1.96 2.52-4 1.853 2.964c-1.271 1.303-1.977 3.089-1.827 5.036h-9.026zm10.82 4h-14.82v-18h22v7.501c-.623-.261-1.297-.422-2-.476v-5.025h-18v14h11.502c.312.749.765 1.424 1.318 2zm-9.32-11c-.828 0-1.5-.671-1.5-1.5 0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5z"/>
-            </svg>
-          </label>
-          <input type="file" id="fileInput{{row.counter}}" class="input-file">
+      <tr>
+        <td>Objetivo Estratégico:</td>
+        <td colspan="2"><input type="text" class="input-rounded"></td>
+      </tr>
+      <tr>
+        <td>Estrategia:</td>
+        <td colspan="2">
+          <input type="text" class="input-rounded">
+          <button id="nuevoButton">Nuevo</button>
         </td>
-        <td><input type="text" value="100%" class="input-rounded"></td>
-        <td>
-          <table>
-            <tr>
-              <td>ISTA</td>
-              <td><input type="text" class="input-rounded"></td>
-            </tr>
-            <tr>
-              <td>Autogestión</td>
-              <td><input type="text" class="input-rounded"></td>
-            </tr>
-          </table>
+      </tr>
+      <tr>
+        <td>Objetivo Operativo:</td>
+        <td colspan="2">
+          <input type="text" class="input-rounded">
+          <button id="addRowButton">+</button>
         </td>
       </tr>
     </table>
   </div>
+
+  <div class="button-group">
+    <button class="edit-button">EDITAR</button>
+    <button class="crear-guardar-button">CREAR o GUARDAR</button>
+  </div>
+
+  <table class="table-design" id="actividadesTable">
+    <tr>
+      <th>Actividades</th>
+      <th>Responsable</th>
+      <th>Plazo</th>
+      <th>Evidencia</th>
+      <th>Meta %</th>
+      <th>Recursos Financieros</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor="let row of rows; let i = index">
+      <td>{{ i + 1 }}</td> <!-- Ajustar el número de actividad aquí -->
+      <td><input type="text" class="input-rounded"></td>
+      <td><input type="text" class="input-rounded"></td>
+      <td>
+        <label for="fileInput{{row.counter}}" class="file-input-label">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M19.5 12c-2.483 0-4.5 2.015-4.5 4.5s2.017 4.5 4.5 4.5 4.5-2.015 4.5-4.5-2.017-4.5-4.5-4.5zm2.5 5h-2v2h-1v-2h-2v-1h2v-2h1v2h2v1zm-18 0l4-5.96 2.48 1.96 2.52-4 1.853 2.964c-1.271 1.303-1.977 3.089-1.827 5.036h-9.026zm10.82 4h-14.82v-18h22v7.501c-.623-.261-1.297-.422-2-.476v-5.025h-18v14h11.502c.312.749.765 1.424 1.318 2zm-9.32-11c-.828 0-1.5-.671-1.5-1.5 0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5c0 .829-.672 1.5-1.5 1.5z"/>
+          </svg>
+        </label>
+        <input type="file" id="fileInput{{row.counter}}" class="input-file">
+      </td>
+      <td><input type="text" value="100%" class="input-rounded"></td>
+      <td>
+        <table>
+          <tr>
+            <td>ISTA</td>
+            <td><input type="text" class="input-rounded"></td>
+          </tr>
+          <tr>
+            <td>Autogestión</td>
+            <td><input type="text" class="input-rounded"></td>
+          </tr>
+        </table>
+      </td>
+      <td>
+        <button class="delete-button" (click)="removeRow(i)">Eliminar</button>
+      </td>
+    </tr>
+  </table>
   
+</div>

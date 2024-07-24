@@ -24,7 +24,7 @@ export class DocUnidadComponent implements OnInit {
     // Añadir el evento de clic al botón "+"
     const addRowButton = document.getElementById('addRowButton');
     if (addRowButton) {
-      addRowButton.addEventListener('click', () => this.addMultipleRows()); // Agregar filas sin límite
+      addRowButton.addEventListener('click', () => this.addMultipleRows());
     }
   }
 
@@ -40,9 +40,16 @@ export class DocUnidadComponent implements OnInit {
     this.addRow(); // Agregar una fila
   }
 
-  // Función para agregar múltiples filas sin límite
+  // Función para agregar múltiples filas si ya hay al menos una fila en la tabla
   addMultipleRows(): void {
-    this.addRow(); // Agregar una fila
+    if (this.rows.length > 0) { // Verificar si ya hay filas
+      const rowsToAdd = 3; // Número de filas adicionales a agregar
+      for (let i = 0; i < rowsToAdd; i++) {
+        this.addRow(); // Agregar una fila
+      }
+    } else {
+      alert('Debe haber al menos una fila en la tabla antes de agregar más filas.');
+    }
   }
 
   // Función para agregar una nueva fila
@@ -54,4 +61,16 @@ export class DocUnidadComponent implements OnInit {
     this.activityCounter++; // Incrementar el contador para la próxima fila
   }
 
+  // Función para eliminar una fila y reordenar las demás
+  removeRow(index: number): void {
+    this.rows.splice(index, 1); // Eliminar la fila en la posición del índice proporcionado
+    this.reorderRows(); // Reordenar las filas restantes
+  }
+
+  // Función para reordenar las filas de la tabla
+  private reorderRows(): void {
+    this.rows.forEach((row, index) => {
+      row.counter = index + 1; // Ajustar el número de actividad
+    });
+  }
 }
