@@ -1,26 +1,18 @@
 <div class="container-login">
-
   <div class="contenido">
-    <div class="imagen">
-    </div>
+    <div class="imagen"></div>
     <div class="login-container">
       <h2>Iniciar Sesión</h2>
       <form [formGroup]="loginForm" (ngSubmit)="login()" class="login">
         <div class="">
-          <!-- <label for="username">Nombre de Usuario:</label> -->
-          <input class="username" type="text" id="username" formControlName="username" placeholder="Email">
+          <input class="username" type="text" id="email" formControlName="email" placeholder="Email">
         </div>
         <div class="">
-          <!-- <label for="password">Contraseña:</label> -->
           <input type="password" id="password" formControlName="password" placeholder="Contraseña">
         </div>
-        <p *ngIf="mensajeLogin">{{mensajeLogin}}</p>
         <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
       </form>
-
-      <!-- Botón de Registrarse -->
-      <button class= "register-button" routerLink="/usuarios/form">Registrarse</button>
-      
+      <button class="register-button" routerLink="/usuarios/form">Registrarse</button>
     </div>
   </div>
 </div>

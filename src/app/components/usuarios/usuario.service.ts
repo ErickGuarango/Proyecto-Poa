@@ -9,6 +9,9 @@ import { map } from 'rxjs/operators';
 export class UsuarioService {
 
   private  urlEndPoint:string='http://localhost:8080/api/usuarios';
+  private  urlEndPoint1:string='http://localhost:8080/api';
+
+
 
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'})
 
@@ -33,6 +36,8 @@ export class UsuarioService {
    delete(id: Usuarios):Observable<Usuarios>{
     return this.http.delete<Usuarios>(`${this.urlEndPoint}/${id}` )
    }
-
+   login(usuario: Usuarios): Observable<any> {
+    return this.http.post<any>(`${this.urlEndPoint1}/login`, usuario, { headers: this.httpHeaders });
+  }
 
 }

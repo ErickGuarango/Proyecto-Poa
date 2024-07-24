@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuarioService
+
+ } from 'src/app/components/usuarios/usuario.service';
+import { Usuarios } from 'src/app/components/usuarios/usuario';
+import Swal from 'sweetalert2'; // Importa SweetAlert2
 
 @Component({
   selector: 'app-login',
@@ -13,9 +18,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private usuarioService: UsuarioService // Asegúrate de que el servicio esté correctamente inyectado
   ) {
-    // Redirigir si ya está autenticado
     if (localStorage.getItem('token')) {
       this.router.navigate(['/app/cliente']);
     }
@@ -23,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     });
   }
@@ -33,14 +38,33 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    // Simular un inicio de sesión exitoso
-    const { username, password } = this.loginForm.value;
-    console.log('Simulación de inicio de sesión exitoso', { username, password });
+    const { email, password } = this.loginForm.value;
+    const usuario = new Usuarios();
+    usuario.correo = email;
+    usuario.contrasena = password;
 
-    // Aquí puedes agregar cualquier lógica adicional si es necesario
-    // Simular una respuesta del servidor con código 200
-    this.mensajeLogin = 'Inicio de sesión exitoso';
-    localStorage.setItem('token', 'fake-jwt-token'); // Simular el almacenamiento de un token
-    this.router.navigate(['/app/cliente']);
+    this.usuarioService.login(usuario).subscribe(
+      response => {
+        // Mostrar alerta de éxito con SweetAlert2
+        Swal.fire({
+          title: 'Éxito!',
+          text: 'Inicio de sesión exitoso',
+          icon: 'success',
+          confirmButtonText: 'Aceptar'
+        }).then(() => {
+          localStorage.setItem('token', 'fake-jwt-token');
+          this.router.navigate(['/app/cliente']);
+        });
+      },
+      error => {
+        // Mostrar alerta de error con SweetAlert2
+        Swal.fire({
+          title: 'Error!',
+          text: 'Email o contraseña incorrectos',
+          icon: 'error',
+          confirmButtonText: 'Intentar de nuevo'
+        });
+      }
+    );
   }
 }
