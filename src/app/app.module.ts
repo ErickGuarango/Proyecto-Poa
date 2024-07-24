@@ -24,6 +24,7 @@ import { RegistroDocenteComponent } from './components/registro-docente/registro
 import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from './components/registro-unidad/registro-unidad.component'; // Asegúrate de importar tu componente
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +53,7 @@ import { RegistroUnidadComponent } from './components/registro-unidad/registro-u
     HttpClientModule,
     FormsModule, // Asegúrate de importar FormsModule aquí
     ReactiveFormsModule,
+    
     // PageModule // Descomentarlo si es necesario
   ],
   providers: [],
