@@ -43,14 +43,12 @@ export class DocUnidadComponent implements OnInit {
   // Función para agregar múltiples filas si ya hay al menos una fila en la tabla
   addMultipleRows(): void {
     if (this.rows.length > 0) { // Verificar si ya hay filas
-      const rowsToAdd = 3; // Número de filas adicionales a agregar
-      for (let i = 0; i < rowsToAdd; i++) {
-        this.addRow(); // Agregar una fila
-      }
+      this.addRow(); // Agregar solo una fila
     } else {
       alert('Debe haber al menos una fila en la tabla antes de agregar más filas.');
     }
   }
+  
 
   // Función para agregar una nueva fila
   private addRow(): void {

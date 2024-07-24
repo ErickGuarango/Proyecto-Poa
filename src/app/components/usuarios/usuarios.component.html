@@ -1,0 +1,56 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Usuarios</div>
+    <div class="card-body text- primary">
+        <h5 class="card-tittle"> LISTADO DE USUARIOS</h5>
+    
+        <div class ="my-2 text-left">
+    
+            <button class = "btn btn-rounded btn-primary" type="button" [routerLink]="['/usuarios/form']"> Crear Docente</button>
+        </div>
+    
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Rol</th>
+                    <th>Carrera</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Usuario</th>
+                    <th>Contraseña</th>
+                    <th>Editar</th>
+                    <th>Borrar</th>
+    
+    
+    
+                </tr>
+            </thead>
+    
+            <tbody>
+    
+                <tr *ngFor="let usuario of usuarios">
+                    <td>{{usuario.id}}</td>
+                    <td>{{usuario.nombre}}</td>
+                    <td>{{usuario.apellido}}</td>
+                    <td>{{usuario.correo}}</td>
+                    <td>{{usuario.f_nacimiento}}</td>
+                    <td>{{usuario.rol}}</td>
+                    <td>{{usuario.usuario}}</td>
+                    <td>{{usuario.contrasena}}</td>
+
+
+                    <td>
+                        <button type="button" name="button" [routerLink]="['/usuarios/form', usuario.id]" class="btn btn-primary">Editar</button>
+                    </td>
+    
+                   
+    
+    
+                </tr>
+            </tbody>
+        </table>
+    
+    </div>
+    </div>

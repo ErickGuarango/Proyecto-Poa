@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="registro-marco">
+    <h2>Registrarse</h2>
+    <form ngNativeValidate (ngSubmit)="create()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="usuario">Usuario</label>
+          <input type="text" id="usuario" name="usuario" class="textfield" [(ngModel)]="usuario.usuario" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" name="contrasena" class="contrasenaText" [(ngModel)]="usuario.contrasena" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" class="textfield" [(ngModel)]="usuario.nombre" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" class="textfield" [(ngModel)]="usuario.apellido" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="f_nacimiento">Fecha de Nacimiento</label>
+          <input type="date" id="f_nacimiento" name="f_nacimiento" class="dateSelect" [(ngModel)]="usuario.f_nacimiento" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="correo">Email</label>
+          <input type="email" id="correo" name="correo" class="textfield" [(ngModel)]="usuario.correo" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="rol">Rol</label>
+          <select id="rol" name="rol" class="form-control" [(ngModel)]="usuario.rol" required>
+            <option *ngFor="let rol of roles" [ngValue]="rol">{{ rol.nombre }}</option>
+          </select>
+        </div>
+      </div>
+      <button  class="btn btn-primary" role="button">Guardar</button>
+    </form>
+  </div>
+</div>
