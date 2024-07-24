@@ -83,11 +83,6 @@ button {
   margin-bottom: 5px;
 }
 
-/* Estilos hover para los botones */
-button:hover {
-  background-color: rgb(51, 131, 204); 
-}
-
 /* Estilos para campos de entrada redondeados */
 .input-rounded {
   width: 100%;
@@ -97,6 +92,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
+/*Estilos botones save, edit and delete*/
 .button-group {
   display: flex;
   justify-content: flex-end;
@@ -104,8 +100,21 @@ button:hover {
 }
 
 .crear-guardar-button {
+  background-color: rgb(67, 165, 62);
   margin-left: 10px;
 }
+.edit-button{
+  background-color: rgb(213, 202, 42);
+  margin-right: 10px;
+
+}
+
+.delete-button{
+  background-color: rgb(213, 42, 42);
+}
+
+
+
 
 /* Estilos para la primera mitad de la tabla */
 .half-table-container {
