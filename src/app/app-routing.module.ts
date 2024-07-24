@@ -38,7 +38,7 @@ const routes: Routes = [
     component: Cod404Component
   }
 ];
-
+ 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
