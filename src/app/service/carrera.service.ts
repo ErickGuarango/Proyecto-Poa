@@ -7,7 +7,7 @@ import { Carrera } from '../model/carrera';
   providedIn: 'root'
 })
 export class CarreraService {
-  private baseUrl = 'http://localhost:8080/api/carreras';  // Cambia esto según la URL de tu API
+  private baseUrl = 'http://localhost:8080/api/carreras';  
 
   constructor(private http: HttpClient) { }
 

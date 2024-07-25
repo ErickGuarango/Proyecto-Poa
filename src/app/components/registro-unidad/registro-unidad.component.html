@@ -1,20 +1,47 @@
-<div class="container">
-    <h2 class="form-title">Ingreso de Unidad</h2>
+<div class="main-container">
+  <div class="container">
     <div class="form-container">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" [(ngModel)]="nuevaUnidad.nombre" />
-  
-      <label for="coordinacion">Coordinación:</label>
-      <input type="text" id="coordinacion" [(ngModel)]="nuevaUnidad.coordinacion" />
-  
-      <label for="director">Director:</label>
-      <input type="text" id="director" [(ngModel)]="nuevaUnidad.director" />
-  
-      <button (click)="agregarUnidad()">Agregar Unidad</button>
+      <p class="form-title">Ingreso de Unidad</p>
+      <form (ngSubmit)="agregarUnidad()">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            [(ngModel)]="nuevaUnidad.nombre"
+            name="nombre"
+            class="input-rounded"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="coordinacion">Coordinación:</label>
+          <input
+            type="text"
+            id="coordinacion"
+            [(ngModel)]="nuevaUnidad.coordinacion"
+            name="coordinacion"
+            class="input-rounded"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="director">Director:</label>
+          <input
+            type="text"
+            id="director"
+            [(ngModel)]="nuevaUnidad.director"
+            name="director"
+            class="input-rounded"
+            required
+          />
+        </div>
+        <button type="submit" class="button-agregar">Agregar Unidad</button>
+      </form>
     </div>
-  
-    <h2 class="list-title">Lista de Unidades</h2>
+
     <div class="table-container">
+      <p class="list-title">Lista de Unidades</p>
       <table class="evaluation-table">
         <thead>
           <tr>
@@ -30,12 +57,12 @@
             <td>{{ unidad.coordinacion }}</td>
             <td>{{ unidad.director }}</td>
             <td>
-              <button (click)="editarUnidad(i)" class="editar-button">Editar</button>
-              <button (click)="eliminarUnidad(i)" class="eliminar-button">Eliminar</button>
+            
+             <button (click)="confirmarEliminacion(i)" class="eliminar-button">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  
+</div>

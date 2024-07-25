@@ -4,7 +4,7 @@
       <!-- Sección del Formulario -->
       <div class="form-container">
         <p class="form-title">Ingreso de Carreras</p>
-        <form (ngSubmit)="agregarCarrera()">
+        <form (ngSubmit)="agregarCarrera(form)" #form="ngForm" novalidate>
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" [(ngModel)]="nuevaCarrera.nombre" name="nombre" class="input-rounded" required>
@@ -49,8 +49,7 @@
               <td>{{ carrera.periodo }}</td>
               <td>{{ carrera.director }}</td>
               <td>
-                <button class="editar-button" (click)="editarCarrera(carrera)">Editar</button>
-                <button class="eliminar-button" (click)="eliminarCarrera(carrera)">Eliminar</button>
+                <button class="eliminar-button" (click)="confirmarEliminacion(carrera)">Eliminar</button>
               </td>
             </tr>
           </tbody>
