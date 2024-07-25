@@ -14,7 +14,6 @@ export class RolesService {
     const roles: Roles[] = [
       { id: 1, nombre: 'DOCENTE', descripcion: ""},
       { id: 2, nombre: 'EVALUADOR', descripcion: ""},
-      { id: 3, nombre: 'ADMINISTRADOR', descripcion: ""}
     ];
     return of(roles);
   }

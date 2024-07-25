@@ -5,7 +5,7 @@
     
         <div class ="my-2 text-left">
     
-            <button class = "btn btn-rounded btn-primary" type="button" [routerLink]="['/usuarios/form']"> Crear Docente</button>
+            <button class = "btn btn-rounded btn-primary" type="button" [routerLink]="['/usuarios/form']"> Crear Usuario</button>
         </div>
     
         <table class="table table-bordered table-striped">
@@ -31,15 +31,19 @@
             <tbody>
     
                 <tr *ngFor="let usuario of usuarios">
+                  
                     <td>{{usuario.id}}</td>
+                    <td>{{usuario.rol.id}}</td>
+                    <td>{{"carrera"}}</td>
+
                     <td>{{usuario.nombre}}</td>
+
                     <td>{{usuario.apellido}}</td>
-                    <td>{{usuario.correo}}</td>
                     <td>{{usuario.f_nacimiento}}</td>
-                    <td>{{usuario.rol}}</td>
+
+                    <td>{{usuario.correo}}</td>
                     <td>{{usuario.usuario}}</td>
                     <td>{{usuario.contrasena}}</td>
-
 
                     <td>
                         <button type="button" name="button" [routerLink]="['/usuarios/form', usuario.id]" class="btn btn-primary">Editar</button>
