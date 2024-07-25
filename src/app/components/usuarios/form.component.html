@@ -1,6 +1,6 @@
 <div class="container">
   <div class="registro-marco">
-    <h2>Registrarse</h2>
+    <h2>{{ titulo }}</h2>
     <form ngNativeValidate (ngSubmit)="create()">
       <div class="form-row">
         <div class="form-group col-md-6">
@@ -33,10 +33,17 @@
             <option *ngFor="let rol of roles" [ngValue]="rol">{{ rol.nombre }}</option>
           </select>
         </div>
+        <!-- Radio Buttons for Carrera or Unidad -->
+        <div class="form-group col-md-6">
+          <label>Seleccionar:</label><br>
+          <input type="radio" id="carrera" name="opcion" [(ngModel)]="opcion" value="carrera" required>
+          <label for="carrera">Carrera</label>
+          <input type="radio" id="unidad" name="opcion" [(ngModel)]="opcion" value="unidad" required>
+          <label for="unidad">Unidad</label>
+        </div>
       </div>
-      <button  class="btn btn-primary" role="button">Guardar</button>
-      <button  class="btn btn-primary" role="button" routerLink="/login">Regresar</button>
-
+      <button class="btn btn-primary" role="button">Guardar</button>
+      <button class="btn btn-primary" role="button" routerLink="/login">Regresar</button>
     </form>
   </div>
 </div>
