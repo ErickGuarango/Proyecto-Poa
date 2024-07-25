@@ -2,7 +2,7 @@
   <div class="container">
     <div class="form-container">
       <p class="form-title">Ingreso de Unidad</p>
-      <form (ngSubmit)="agregarUnidad()">
+      <form #form="ngForm" (ngSubmit)="agregarUnidad(form)">
         <div class="form-group">
           <label for="nombre">Nombre:</label>
           <input
@@ -52,13 +52,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let unidad of unidades; let i = index">
+          <tr *ngFor="let unidad of unidades">
             <td>{{ unidad.nombre }}</td>
             <td>{{ unidad.coordinacion }}</td>
             <td>{{ unidad.director }}</td>
             <td>
-            
-             <button (click)="confirmarEliminacion(i)" class="eliminar-button">Eliminar</button>
+              <button (click)="confirmarEliminacion(unidad)" class="eliminar-button">Eliminar</button>
             </td>
           </tr>
         </tbody>
