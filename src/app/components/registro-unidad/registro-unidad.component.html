@@ -1,68 +1,50 @@
 <div class="main-container">
   <div class="container">
-    <div class="form-container">
-      <p class="form-title">Ingreso de Unidad</p>
-      <form (ngSubmit)="agregarUnidad()">
-        <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input
-            type="text"
-            id="nombre"
-            [(ngModel)]="nuevaUnidad.nombre"
-            name="nombre"
-            class="input-rounded"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="coordinacion">Coordinación:</label>
-          <input
-            type="text"
-            id="coordinacion"
-            [(ngModel)]="nuevaUnidad.coordinacion"
-            name="coordinacion"
-            class="input-rounded"
-            required
-          />
-        </div>
-        <div class="form-group">
-          <label for="director">Director:</label>
-          <input
-            type="text"
-            id="director"
-            [(ngModel)]="nuevaUnidad.director"
-            name="director"
-            class="input-rounded"
-            required
-          />
-        </div>
-        <button type="submit" class="button-agregar">Agregar Unidad</button>
-      </form>
-    </div>
+    <div class="registro-marco">
+      <!-- Sección del Formulario -->
+      <div class="form-container">
+        <p class="form-title">Ingreso de Unidad</p>
+        <form (ngSubmit)="agregarUnidad(form)" #form="ngForm" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" [(ngModel)]="nuevaUnidad.nombre" name="nombre" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="coordinacion">Coordinación:</label>
+            <input type="text" id="coordinacion" [(ngModel)]="nuevaUnidad.coordinacion" name="coordinacion" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="director">Director:</label>
+            <input type="text" id="director" [(ngModel)]="nuevaUnidad.director" name="director" class="input-rounded" required>
+          </div>
+          <button type="submit" class="button-agregar">Agregar</button>
+        </form>
+      </div>
 
-    <div class="table-container">
-      <p class="list-title">Lista de Unidades</p>
-      <table class="evaluation-table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Coordinación</th>
-            <th>Director</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let unidad of unidades; let i = index">
-            <td>{{ unidad.nombre }}</td>
-            <td>{{ unidad.coordinacion }}</td>
-            <td>{{ unidad.director }}</td>
-            <td>
-            
-             <button (click)="confirmarEliminacion(i)" class="eliminar-button">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      <!-- Sección de la Tabla -->
+      <div class="table-container">
+        <p class="list-title">Lista de Unidades</p>
+        <table class="evaluation-table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Coordinación</th>
+              <th>Director</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let unidad of unidades">
+              <td>{{ unidad.nombre }}</td>
+              <td>{{ unidad.coordinacion }}</td>
+              <td>{{ unidad.director }}</td>
+              <td>
+                <button class="eliminar-button" (click)="confirmarEliminacion(unidad)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 </div>
