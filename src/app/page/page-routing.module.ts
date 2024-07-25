@@ -12,6 +12,7 @@ import { EvaluacionComponent } from '../components/evaluacion/evaluacion.compone
 import { DocUnidadComponent } from '../components/doc-unidad/doc-unidad.component';
 import { RegistroCarrerasComponent } from '../components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from '../components/registro-unidad/registro-unidad.component';
+import { UsuarioComponent } from '../components/usuarios/usuarios.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,10 @@ const routes: Routes = [
 
       { path: 'registro-carreras', component:
          RegistroCarrerasComponent },
+
+
+      { path: 'usuarios', component:
+        UsuarioComponent },
          { path: 'registro-unidad', component:
           RegistroUnidadComponent },
          

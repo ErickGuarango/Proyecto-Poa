@@ -4,6 +4,12 @@
     <ul>
       <details>
         <summary>ADMIN</summary>
+
+        <li>
+          <button routerLink="/app/usuarios" routerLinkActive="underline" (click)="activateButton($event)">
+            📝 Lista de Usuarios
+          </button>
+        </li>
         <li>
           <button routerLink="/app/registro-carreras" routerLinkActive="underline" (click)="activateButton($event)">
             🎓Registro Carreras
