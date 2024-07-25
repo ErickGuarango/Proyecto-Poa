@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarreraService } from '../../service/carrera.service';
+import Swal from 'sweetalert2';
+import { NgForm } from '@angular/forms';
 
 interface Carrera {
   id?: number;
@@ -36,7 +38,17 @@ export class RegistroCarrerasComponent implements OnInit {
     });
   }
 
-  agregarCarrera() {
+  agregarCarrera(form: NgForm) {
+    if (form.invalid) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Por favor completa todos los campos requeridos.',
+        confirmButtonText: 'Aceptar'
+      });
+      return;
+    }
+
     const periodo = `${this.nuevaCarrera.periodoInicio} - ${this.nuevaCarrera.periodoFin}`;
     const carrera: Carrera = {
       nombre: this.nuevaCarrera.nombre,
@@ -54,6 +66,29 @@ export class RegistroCarrerasComponent implements OnInit {
         periodoFin: '',
         director: ''
       };
+      Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: 'Carrera guardada exitosamente',
+        confirmButtonText: 'Aceptar'
+      });
+    });
+  }
+
+  confirmarEliminacion(carrera: Carrera) {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: 'Esta acción no se puede deshacer.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.eliminarCarrera(carrera);
+      }
     });
   }
 
@@ -61,11 +96,13 @@ export class RegistroCarrerasComponent implements OnInit {
     if (carrera.id) {
       this.carreraService.deleteCarrera(carrera.id).subscribe(() => {
         this.carreras = this.carreras.filter(c => c.id !== carrera.id);
+        Swal.fire({
+          icon: 'success',
+          title: 'Eliminado',
+          text: 'Carrera eliminada exitosamente',
+          confirmButtonText: 'Aceptar'
+        });
       });
     }
-  }
-
-  editarCarrera(carrera: Carrera) {
-    // Lógica para editar una carrera
   }
 }

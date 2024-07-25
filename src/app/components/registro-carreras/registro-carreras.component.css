@@ -5,6 +5,9 @@
   border-radius: 20px;
   background-color: #f9f9f9;
   margin: 20px;
+  margin-bottom: 20px; /* Consistent margin */
+  overflow-y: auto; /* Added scrollbar */
+  max-height: calc(100vh - 40px); /* Adjust to fit within the viewport */
 }
 
 /* General container styles */
@@ -45,7 +48,7 @@
 /* Form input styles */
 .form-container input {
   width: 100%;
-  padding: 8px;
+  padding: 5px; /* Reduced padding */
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -53,18 +56,20 @@
 
 /* Add button styles */
 .button-agregar {
-  background-color: #d9534f; /* Dark tomato */
+  background-color: #48bb78; /* Green */
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  display: block; /* Center align */
+  margin: 0 auto; /* Center align */
 }
 
 /* Add button hover effect */
 .button-agregar:hover {
-  background-color: #c9302c;
+  background-color: #38a169;
 }
 
 /* List title styles */
@@ -84,6 +89,8 @@
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Added scrollbar */
+  max-height: 300px; /* Adjust as needed */
 }
 
 /* Table styles */
@@ -120,7 +127,7 @@
 
 /* Action button styles */
 .evaluation-table td button {
-  background-color: #43a4ff;
+  background-color: #d9534f; /* Red for delete */
   color: white;
   border: none;
   border-radius: 5px;
@@ -132,19 +139,9 @@
   margin-bottom: 5px;
 }
 
-/* Save button styles */
-.evaluation-table td button.guardar-button {
-  background-color: #48bb78; /* Green */
-}
-
-/* Action button hover effect */
-.evaluation-table td button:hover {
-  background-color: #2f8bd4;
-}
-
 /* Save button hover effect */
-.evaluation-table td button.guardar-button:hover {
-  background-color: #38a169;
+.evaluation-table td button:hover {
+  background-color: #c9302c;
 }
 
 /* Rounded input styles */
@@ -152,4 +149,11 @@
   border-radius: 10px;
   border: 1px solid #ccc;
   padding: 5px;
+}
+
+/* Error message styles */
+.error-message {
+  color: #d9534f;
+  font-size: 0.875em;
+  margin-top: 5px;
 }
