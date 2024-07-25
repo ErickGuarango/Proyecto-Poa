@@ -3,22 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ClienteComponent } from './page/cliente/cliente.component';
-import { ProductoComponent } from './page/Rutas/producto.component';
-import { FacturaComponent } from './page/factura/factura.component';
+
+//import { ProductoComponent } from './page/Rutas/producto.component';
+
 import { MenuComponent } from './components/menu/menu.component';
 import { Cod404Component } from './components/cod404/cod404.component';
-import { NuevoComponent } from './components/clientes/nuevo/nuevo.component';
+//import { NuevoComponent } from './components/clientes/nuevo/nuevo.component';
 import { HomeClienteComponent } from './components/clientes/home-cliente/home-cliente.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Asegúrate de importar FormsModule aquí
-import { HomeProductoComponent } from './components/productos/home-producto/home-producto.component';
-import { NuevoProductoComponent } from './components/productos/nuevo-producto/nuevo-producto.component';
-import { EditarClienteComponent } from './components/clientes/editar-cliente/editar-cliente.component';
-import { EditarProductoComponent } from './components/productos/editar-producto/editar-producto.component';
+//import { EditarClienteComponent } from './components/clientes/editar-cliente/editar-cliente.component';
 import { LoginComponent } from './page/login/login.component';
 import { PageModule } from './page/page.module';
-import { CabfacturaComponent } from './components/facturas/cabfactura/cabfactura.component';
-import { ListaFacturasComponent } from './components/facturas/lista-facturas/lista-facturas.component';
 import { EvaluacionComponent } from './components/evaluacion/evaluacion.component';
 //import { RegistroDocenteComponent } from './components/registro-docente/registro-docente.component';
 import { RegistroCarrerasComponent } from './components/registro-carreras/registro-carreras.component';
@@ -28,26 +23,25 @@ import { UsuarioComponent } from './components/usuarios/usuarios.component'; // 
 import { RolesService } from './components/roles/roles.service';
 import { RouterModule } from '@angular/router';
 import { FormComponent } from './components/usuarios/form.component';
-
 import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
+import { ClienteComponent } from './page/cliente/cliente.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteComponent,
-    ProductoComponent,
-    FacturaComponent,
-    MenuComponent,
     HomeClienteComponent,
+  
+    //ProductoComponent,
+    
+    MenuComponent,
+   
     Cod404Component,
-    NuevoComponent,
-    HomeProductoComponent,
-    NuevoProductoComponent,
-    EditarClienteComponent,
-    EditarProductoComponent,
+   // NuevoComponent,
+   
     LoginComponent,
-    CabfacturaComponent,
-    ListaFacturasComponent,
+    
     EvaluacionComponent,
    // RegistroDocenteComponent, 
     RegistroCarrerasComponent,

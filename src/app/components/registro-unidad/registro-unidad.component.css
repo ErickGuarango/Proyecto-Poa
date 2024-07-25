@@ -1,105 +1,159 @@
+/* General main container styles */
+.main-container {
+  border: 2px solid #43a4ff;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  margin-bottom: 20px; /* Consistent margin */
+  overflow-y: auto; /* Added scrollbar */
+  max-height: calc(100vh - 40px); /* Adjust to fit within the viewport */
+}
+
 /* General container styles */
 .container {
-    width: 97%;
-    margin: auto;
-    margin-top: 20px;
-  }
-  
-  /* Form container styles */
-  .form-container {
-    width: 50%;
-    margin: auto;
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  /* Form title styles */
-  .form-title {
-    background-color: #43a4ff;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-  }
-  
-  /* Form label styles */
-  .form-container label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: 600;
-  }
-  
-  /* Form input styles */
-  .form-container input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  /* Add button styles */
-  .form-container button {
-    background-color: rgb(67, 164, 255);
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Add button hover effect */
-  .form-container button:hover {
-    background-color: rgb(51, 131, 204);
-  }
-  
-  /* List title styles */
-  .list-title {
-    background-color: #43a4ff;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  /* Table container styles */
-  .table-container {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Table styles */
-  .evaluation-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 8px;
-  }
-  
-  /* Table cell styles */
-  .evaluation-table th,
-  .evaluation-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  /* Table header styles */
-  .evaluation-table th {
-    background-color: #f2f2f2;
-    color: #333;
-  }
-  
-  /* Odd row styles */
-  .evaluation-table tbody tr:nth-child(odd) {
-    background-color: #f2f8ff;
-  }
-  
+  width: 97%;
+  margin: auto;
+  margin-top: 20px;
+}
 
-  
+/* Form container styles */
+.form-container {
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px; /* Increased margin */
+}
+
+/* Form title styles */
+.form-title {
+  background-color: #43a4ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-bottom: 20px; /* Added margin */
+}
+
+/* Form label styles */
+.form-container label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+/* Form input styles */
+.form-container input {
+  width: 100%;
+  padding: 5px; /* Reduced padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* Add button styles */
+.button-agregar {
+  background-color: #48bb78; /* Green */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block; /* Center align */
+  margin: 0 auto; /* Center align */
+}
+
+/* Add button hover effect */
+.button-agregar:hover {
+  background-color: #38a169;
+}
+
+/* List title styles */
+.list-title {
+  background-color: #43a4ff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-top: 40px; /* Increased margin */
+  margin-bottom: 20px; /* Added margin */
+}
+
+/* Table container styles */
+.table-container {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Added scrollbar */
+  max-height: 300px; /* Adjust as needed */
+}
+
+/* Table styles */
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  margin-bottom: 20px; /* Added margin */
+}
+
+/* Table cell styles */
+.evaluation-table th,
+.evaluation-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table header styles */
+.evaluation-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Odd row styles */
+.evaluation-table tbody tr:nth-child(odd) {
+  background-color: #f2f8ff;
+}
+
+/* Table row hover effect */
+.evaluation-table tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+/* Action button styles */
+.evaluation-table td button {
+  background-color: #d9534f; /* Red for delete */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Save button hover effect */
+.evaluation-table td button:hover {
+  background-color: #c9302c;
+}
+
+/* Rounded input styles */
+.input-rounded {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+/* Error message styles */
+.error-message {
+  color: #d9534f;
+  font-size: 0.875em;
+  margin-top: 5px;
+}
