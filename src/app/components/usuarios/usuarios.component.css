@@ -1,0 +1,104 @@
+/* Estilo general para la tarjeta */
+.card {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  /* Encabezado de la tarjeta */
+  .card-header {
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Cuerpo de la tarjeta */
+  .card-body {
+    padding: 20px;
+  }
+  
+  /* Título de la tarjeta */
+  .card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón "Crear Usuario" */
+  .btn-rounded {
+    border-radius: 50px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Tabla */
+  .table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+  }
+  
+  .table-bordered {
+    border: 1px solid #dee2e6;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  
+  .table thead th {
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .table tbody td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .table th, .table td {
+    border: 1px solid #dee2e6;
+  }
+  
+  /* Botones de acción en la tabla */
+  .btn {
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  

@@ -1,109 +1,108 @@
-.container {
+/* Contenedor principal */
+.container-principal {
+  background: url('../../../assets/FondoAzuay.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-position: center left;
+  height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+/* Estilo del marco del registro */
+.registro-marco {
+  margin-left: 150px;
+  width: 80%;
+  max-width: 800px; /* Ancho máximo del marco */
+  padding: 10px;
+  border: 1px solid #cccccc92;
+  border-radius: 10px;
+  background-color: #09090995;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  display: flex;
+  flex-direction: column;
+  
+  align-items: center; /* Alineación horizontal */
+}
+
+/* Título del marco del registro */
+.registro-marco h2 {
+  text-align: center;
+  margin-bottom: px;
+  color: #ccc;
+}
+
+/* Estructura del formulario en filas */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Espacio entre columnas */
+}
+
+/* Estilo de los grupos de campos del formulario */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Estilo para botones primarios */
+.btn-primary {
+  background-color: #17497c;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #0f355c;
+}
+
+
+/* Separadores */
+.separator {
   width: 100%;
-    background: url('../../../assets/FondoRegistro.jpg') no-repeat ;
-background-position: center;
-  }
-  
-  
-  .registro-marco {
-    width: 80%;
-    max-width: 800px; /* Ancho máximo del marco */
-    padding: 20px;
-    border: 1px solid #cccccc92;
-    border-radius: 10px;
-    background-color: #f9f9f94e;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-  }
-  
-  .registro-marco h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px; /* Espacio entre columnas */
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .btn-primary {
-    background-color: #17497c;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0f355c;
-  }
+  height: 1px;
+  background-color: #ffffff;
+  margin: 20px 0;
+}
+/* Estilo para botones secundarios */
+.btn-secundary {
+  background-color: #17497c;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 500px;
+}
 
-  .btn-secundary{
-    background-color: #17497c;
-    color: #fff;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-left: 500px;
+/* Estilo para campos de tipo texto */
+.textfield, 
+.contrasenaText, 
+.dateSelect {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e9e3e3;
+  border-radius: 5px;
+}
 
-  }
+/* Estilo para campos de tipo correo */
+.form-control[type="email"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-  /* Estilo para los campos de tipo texto */
-.textfield {
-    /* Estilos generales */
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para los campos de tipo contraseña */
-  .contrasenaText {
-    /* Estilos generales */
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para los campos de tipo fecha */
-  .dateSelect{
-    /* Estilos generales */
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para los campos de tipo correo */
-  .form-control[type="email"] {
-    /* Estilos generales */
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Estilo para los campos de tipo select */
 /* Estilo moderno para combo box */
-.form-control{
+.form-control {
   width: 100%;
+  margin-left: 40px;
   padding: 12px 20px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -131,5 +130,30 @@ background-position: center;
   border-color: #57b846;
 }
 
-  
-  
+/* Estilo para los radio buttons */
+.form-group input[type="radio"] {
+  margin-right: 10px; /* Espacio a la derecha del radio button */
+  margin-top: 5px;    /* Espacio en la parte superior del radio button */
+}
+
+.form-group label {
+  margin-right: 20px; /* Espacio a la derecha de la etiqueta del radio button */
+  margin-bottom: 0;   /* Asegura que no haya espacio adicional debajo de las etiquetas */
+}
+
+/* Contenedor de botones en extremos opuestos */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-group label {
+  color: #ffffff; 
+  margin-left: 40px;
+  /* Cambia este color según tu preferencia */
+}
+
+.form-group input{
+  margin-left: 40px;
+}

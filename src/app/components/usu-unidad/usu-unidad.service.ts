@@ -2,38 +2,38 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Usuarios } from './usuario';
+import { UsuUnidad } from './usu-unidad';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsuarioService {
-  private urlEndPoint: string = 'http://localhost:8080/api/usuarios';
+export class UsuUnidadService {
+  private urlEndPoint: string = 'http://localhost:8080/api/usuUnidad';
   private loginUrl: string = 'http://localhost:8080/api/login';
 
   private httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) {}
 
-  getUsuarios(): Observable<Usuarios[]> {
-    return this.http.get<Usuarios[]>(this.urlEndPoint).pipe(
-      map(response => response as Usuarios[])
+  getUsuUnidad(): Observable<UsuUnidad[]> {
+    return this.http.get<UsuUnidad[]>(this.urlEndPoint).pipe(
+      map(response => response as UsuUnidad[])
     );
   }
 
-  create(usuario: Usuarios): Observable<Usuarios> {
-    return this.http.post<Usuarios>(this.urlEndPoint, usuario, { headers: this.httpHeaders });
+  create(usuUnidad: UsuUnidad): Observable<UsuUnidad> {
+    return this.http.post<UsuUnidad>(this.urlEndPoint, usuUnidad, { headers: this.httpHeaders });
   }
 
-  getUsuario(id: number): Observable<Usuarios> {
-    return this.http.get<Usuarios>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeaders });
+  getUsuUnidadId(id: number): Observable<UsuUnidad> {
+    return this.http.get<UsuUnidad>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeaders });
   }
 
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.urlEndPoint}/${id}`, { headers: this.httpHeaders });
   }
 
-  login(usuario: Usuarios): Observable<any> {
+  login(usuario: UsuUnidad): Observable<any> {
     return this.http.post<any>(this.loginUrl, usuario, { headers: this.httpHeaders });
   }
 }

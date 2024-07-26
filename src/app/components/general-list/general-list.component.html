@@ -1,0 +1,60 @@
+<div>
+    <h2>Registro General</h2>
+  
+    <!-- Sección para UsuCarrera -->
+    <div>
+      <h3>Coordinacion en Carreras</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre </th>
+            <th>Apellido </th>
+            <th>Correo </th>
+            <th>Carrera</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuCarrera of usuCarreras">
+
+            <td>{{ usuCarrera.id }}</td>
+            <td>{{ usuCarrera.usuario.nombre }}</td>
+            <td>{{ usuCarrera.usuario.apellido }}</td>
+            <td>{{ usuCarrera.usuario.correo }}</td>
+            <td>{{ usuCarrera.carrera.nombre }}</td>
+            <td>{{ usuCarrera.fecha | date }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Sección para UsuUnidad -->
+    <div>
+      <h3>Coordinacion en Unidades</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre </th>
+            <th>Apellido </th>
+            <th>Correo </th>
+            <th>Unidad</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuUnidad of usuUnidades">
+            <td>{{ usuUnidad.id }}</td>
+            <td>{{ usuUnidad.usuario.nombre }}</td>
+            <td>{{ usuUnidad.usuario.apellido }}</td>
+            <td>{{ usuUnidad.usuario.correo }}</td>
+            <td>{{ usuUnidad.unidad.nombre }}</td>
+            <td>{{ usuUnidad.fecha | date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

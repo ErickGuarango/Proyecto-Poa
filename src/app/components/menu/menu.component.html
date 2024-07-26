@@ -6,6 +6,12 @@
         <summary>ADMIN</summary>
 
         <li>
+          <button routerLink="/app/listado" routerLinkActive="underline" (click)="activateButton($event)">
+            🗂 Lista General Coordinacion
+          </button>
+        </li>
+
+        <li>
           <button routerLink="/app/usuarios" routerLinkActive="underline" (click)="activateButton($event)">
             📝 Lista de Usuarios
           </button>

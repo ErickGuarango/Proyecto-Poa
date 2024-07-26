@@ -1,0 +1,77 @@
+/* Contenedor principal */
+div {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: #f4f7f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezado principal */
+  h2 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Secciones */
+  div > div {
+    margin-bottom: 30px;
+  }
+  
+  /* Encabezados de sección */
+  h3 {
+    font-size: 1.5em;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Encabezados de tabla */
+  th {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Celdas de tabla */
+  td {
+    padding: 12px;
+    text-align: left;
+    color: #555;
+  }
+  
+  /* Filas alternas */
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Filas de tabla al pasar el ratón */
+  tbody tr:hover {
+    background-color: #e1e1e1;
+  }
+  
+  /* Bordes de tabla */
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  

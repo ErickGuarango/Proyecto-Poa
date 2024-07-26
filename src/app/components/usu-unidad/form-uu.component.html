@@ -1,0 +1,30 @@
+<div>
+    <h2>Registre la Unidad</h2>
+    
+    <!-- Mostrar los datos del usuario ingresado -->
+    <div>
+      <h3>Datos del Usuario</h3>
+      <p><strong>Nombre:</strong> {{ usuario?.nombre }}</p>
+      <p><strong>Apellido:</strong> {{ usuario?.apellido }}</p>
+      <p><strong>Correo:</strong> {{ usuario?.correo }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ usuario?.f_nacimiento| date }}</p>
+    </div>
+  
+    <!-- Formulario para registrar Usuunidad -->
+    <form (ngSubmit)="create()">
+      <div class="form-group">
+        <label for="unidad">unidad</label>
+        <select class="form-control" id="unidad" [(ngModel)]="usuUnidad.unidad.id" name="unidad" required>
+          <option *ngFor="let unidad of unidades" [value]="unidad.id">{{ unidad.nombre }}</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" class="form-control" id="fecha" [(ngModel)]="usuUnidad.fecha" name="fecha" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>
+  
