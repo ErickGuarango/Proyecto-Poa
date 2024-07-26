@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UnidadService } from '../../service/unidad.service'; // Ajusta la ruta según tu estructura
+import { UnidadService } from '../../service/unidad.service';
 import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
 
@@ -17,7 +17,12 @@ interface Unidad {
 })
 export class RegistroUnidadComponent implements OnInit {
   unidades: Unidad[] = [];
-  nuevaUnidad: Unidad = { nombre: '', coordinacion: '', director: '' };
+  nuevaUnidad: Unidad = {
+    nombre: '',
+    coordinacion: '',
+    director: ''
+  };
+  
 
   constructor(private unidadService: UnidadService) {}
 
@@ -42,13 +47,23 @@ export class RegistroUnidadComponent implements OnInit {
       return;
     }
 
-    this.unidadService.addUnidad(this.nuevaUnidad).subscribe((unidad: Unidad) => {
+    const unidad: Unidad = {
+      nombre: this.nuevaUnidad.nombre,
+      coordinacion: this.nuevaUnidad.coordinacion,
+      director: this.nuevaUnidad.director
+    };
+
+    this.unidadService.addUnidad(unidad).subscribe((unidad: Unidad) => {
       this.unidades.push(unidad);
-      this.nuevaUnidad = { nombre: '', coordinacion: '', director: '' };
+      this.nuevaUnidad = {
+        nombre: '',
+        coordinacion: '',
+        director: ''
+      };
       Swal.fire({
         icon: 'success',
         title: 'Éxito',
-        text: 'Unidad agregada exitosamente',
+        text: 'Unidad guardada exitosamente',
         confirmButtonText: 'Aceptar'
       });
     });
