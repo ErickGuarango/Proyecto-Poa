@@ -27,7 +27,7 @@
 
 /* Estilos para el título rojo */
 .table-container .rojo {
-  background-color: rgb(226, 68, 68);
+  background-color: rgb(38, 38, 228);
   color: #fff;
   width: 100%;
   height: 50px;
@@ -92,7 +92,7 @@ button {
   margin-bottom: 10px;
 }
 
-/*Estilos botones save, edit and delete*/
+/* Estilos para botones save, edit and delete */
 .button-group {
   display: flex;
   justify-content: flex-end;
@@ -100,21 +100,18 @@ button {
 }
 
 .crear-guardar-button {
-  background-color: rgb(67, 165, 62);
+  background-color: rgb(54, 71, 226);
   margin-left: 10px;
 }
-.edit-button{
-  background-color: rgb(213, 202, 42);
-  margin-right: 10px;
 
+.edit-button {
+  background-color: rgb(54, 169, 226);
+  margin-right: 10px;
 }
 
-.delete-button{
+.delete-button {
   background-color: rgb(213, 42, 42);
 }
-
-
-
 
 /* Estilos para la primera mitad de la tabla */
 .half-table-container {
@@ -154,4 +151,14 @@ button {
 
 .campo-container {
   flex-wrap: wrap;
+}
+
+/* Estilos para la etiqueta de las celdas */
+.label-cell {
+  width: 20%; /* Ajusta este valor según tus necesidades */
+}
+
+/* Asegurarse de que los campos de entrada ocupen todo el espacio disponible */
+.full-width {
+  width: calc(100% - 10px); /* Ajuste para evitar desbordamientos */
 }
