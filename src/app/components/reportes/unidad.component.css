@@ -1,0 +1,92 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.table1 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  
+}
+.table2 {
+  width: 30%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  
+}
+
+th, td {
+  border: 1px solid #000;
+  padding: 8px;
+  text-align: left;
+}
+
+.main{
+  background-color:bisque;
+  color: #000000;
+}
+
+.submain{
+  background-color: #1b3d5d;
+  color: #d9d9d9;
+}
+
+.strategy {
+  background-color: #d9d9d9;
+  font-weight: bold;
+}
+
+.objective {
+  background-color: #d9d9d9;
+  font-weight: bold;
+  text-align: left;
+}
+
+.medium{
+  background-color: #e7d802;
+  color: #1b3d5d;
+  font-size: 20px;
+}
+
+.down{
+  background-color: #b49b0f;
+  color: #1b3d5d;
+  font-size: 20px;
+}
+
+.up{
+  background-color: #08ba3a;
+  color: #1b3d5d;
+  font-size: 20px;
+}
+
+.none{
+  background-color: red;
+}
+
+.title{
+  color: #1b3d5d;
+  text-align: center;
+}
+
+.subtitle{
+  color: #1b3d5d;
+  text-align: center;
+}
+
+.total{
+  background-color: #1b3d5d;
+  color: #d9d9d9;
+}
+
+/* css para diagrama pastel */
+.chart-container {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#myPieChart {
+  width: 100% !important;
+  height: auto !important;
+}
