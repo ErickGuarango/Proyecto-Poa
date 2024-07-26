@@ -40,7 +40,10 @@
  
   <div class="button-group">
     <button class="edit-button">EDITAR</button>
-    <button class="crear-guardar-button">GUARDAR</button>
+    <button class="crear-guardar-button" (click)="alert()"[class.disabled]="isButtonDisabled" [disabled]="isButtonDisabled">
+      CREAR o GUARDAR
+    </button>
+
   </div>
   
   <table class="table-design" id="actividadesTable">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import  swal from 'sweetalert2';
 @Component({
   selector: 'app-doc-unidad',
   templateUrl: './doc-unidad.component.html',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DocUnidadComponent implements OnInit {
   private activityCounter: number = 1; // Contador para las actividades
   public rows: any[] = []; // Array para almacenar las filas de la tabla
+  public isButtonDisabled:boolean=true;
 
   constructor() {}
 
@@ -26,7 +27,33 @@ export class DocUnidadComponent implements OnInit {
     if (addRowButton) {
       addRowButton.addEventListener('click', () => this.addMultipleRows());
     }
+
+    // Verificar los campos de texto
+    const inputs = document.querySelectorAll('input[type="text"]');
+    inputs.forEach(input => {
+      input.addEventListener('input', () => this.checkInputs());
+    });
   }
+
+  checkInputs(): void {
+    const inputs = document.querySelectorAll('input[type="text"]');
+    this.isButtonDisabled = Array.from(inputs).some(input => !(input as HTMLInputElement).value);
+  
+  }
+
+  //alerta al guardar(solo visual)
+
+  alert(): void {
+    swal.fire({
+      icon: "success",
+      title: "Se ha guardado correctamente",
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+  
+
+
 
   // Función para limpiar la tabla
   clearTable(): void {
@@ -45,7 +72,12 @@ export class DocUnidadComponent implements OnInit {
     if (this.rows.length > 0) { // Verificar si ya hay filas
       this.addRow(); // Agregar solo una fila
     } else {
-      alert('Debe haber al menos una fila en la tabla antes de agregar más filas.');
+      swal.fire({
+        icon: 'info',
+        title: 'Informacion',
+        text: 'Primero debes crea una nueva estrategia.',
+      });
+ 
     }
   }
   
@@ -59,11 +91,34 @@ export class DocUnidadComponent implements OnInit {
     this.activityCounter++; // Incrementar el contador para la próxima fila
   }
 
+
+
+
+  
   // Función para eliminar una fila y reordenar las demás
+  
   removeRow(index: number): void {
-    this.rows.splice(index, 1); // Eliminar la fila en la posición del índice proporcionado
-    this.reorderRows(); // Reordenar las filas restantes
+    swal.fire({
+     title: 'Estas seguro de eliminar?',
+     icon: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: 'Si'
+    }).then((result)=>{
+      if (result.isConfirmed){
+        this.rows.splice(index, 1); // Eliminar la fila en la posición del índice proporcionado
+        this.reorderRows(); // Reordenar las filas restantes
+        swal.fire(
+          'Eliminado con Exito',
+          'Sus datos han sido eliminados.',
+          'success'
+        );
+      }
+    });
+
   }
+
 
   // Función para reordenar las filas de la tabla
   private reorderRows(): void {

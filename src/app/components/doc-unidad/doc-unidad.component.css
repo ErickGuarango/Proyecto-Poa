@@ -103,6 +103,13 @@ button {
   background-color: rgb(67, 165, 62);
   margin-left: 10px;
 }
+
+.crear-guardar-button.disabled {
+  background-color: #d3d3d3;
+  margin-left: 10px;
+  color: #8c8c8c;
+}
+
 .edit-button{
   background-color: rgb(213, 202, 42);
   margin-right: 10px;
