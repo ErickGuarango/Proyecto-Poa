@@ -13,9 +13,15 @@ import { DocUnidadComponent } from '../components/doc-unidad/doc-unidad.componen
 import { RegistroCarrerasComponent } from '../components/registro-carreras/registro-carreras.component';
 import { RegistroUnidadComponent } from '../components/registro-unidad/registro-unidad.component';
 import { UsuarioComponent } from '../components/usuarios/usuarios.component';
+import { EstadisticasComponent } from '../components/estadisticas/estadisticas.component';
 
 
 const routes: Routes = [
+
+  {
+    path: 'estadisticas',
+    component: EstadisticasComponent
+  },
 
     {
       path: 'cliente',

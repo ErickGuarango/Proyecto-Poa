@@ -1,0 +1,101 @@
+/* General main container styles */
+.main-container {
+  border: 2px solid #43a4ff;
+  padding: 120px; /* Reduced padding for a more compact look */
+  border-radius: 20px; /* Reduced border radius for a less rounded look */
+  background-color: #f9f9f9;
+  margin: 20px; /* Reduced margin for a tighter layout */
+  margin-bottom: 20px; /* Consistent margin */
+  overflow-y: auto; /* Added scrollbar */
+  max-height: calc(100vh - 40px); /* Adjust to fit within the viewport */
+}
+
+/* General container styles */
+.container {
+  width: 100%; /* Adjusted to take full width */
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Chart container styles */
+.chart-container {
+  width: 50%; /* Adjusted width to make the chart container larger */
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px; /* Increased padding for more space */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
+  margin-bottom: 20px; /* Consistent margin */
+}
+
+/* Chart title styles */
+.chart-title {
+  background-color: #43a4ff;
+  color: #fff;
+  padding: 15px; /* Increased padding for a bolder title */
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  margin-bottom: 20px; /* Increased margin for better separation */
+}
+
+/* Table container styles */
+.table-container {
+  width: 50%; /* Adjusted width to make the table container larger */
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 25px; /* Increased padding for more space */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Increased shadow for emphasis */
+  margin-bottom: 20px; /* Consistent margin */
+}
+
+/* Table styles */
+.statistics-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  margin-bottom: 15px; /* Increased margin for better spacing */
+}
+
+/* Table cell styles */
+.statistics-table th,
+.statistics-table td {
+  border: 1px solid #ddd;
+  padding: 10px; /* Increased padding for better readability */
+  text-align: left;
+}
+
+/* Table header styles */
+.statistics-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* Odd row styles */
+.statistics-table tbody tr:nth-child(odd) {
+  background-color: #f2f8ff;
+}
+
+/* Table row hover effect */
+.statistics-table tbody tr:hover {
+  background-color: #e6f7ff;
+}
+
+/* Action button styles */
+.statistics-table td button {
+  background-color: #d9534f; /* Red for delete */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px; /* Increased padding for larger buttons */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Action button hover effect */
+.statistics-table td button:hover {
+  background-color: #c9302c;
+}
