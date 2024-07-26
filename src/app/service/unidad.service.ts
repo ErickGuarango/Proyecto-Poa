@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Unidad } from '../model/unidad';  // Asegúrate de que esta ruta sea correcta
+import { Unidad } from '../model/unidad';  
 
 @Injectable({
   providedIn: 'root'
 })
 export class UnidadService {
-  private baseUrl = 'http://localhost:8080/api/unidad';  // Cambia esto según la URL de tu API
+  private baseUrl = 'http://localhost:8080/api/unidad';  
 
   constructor(private http: HttpClient) { }
 
