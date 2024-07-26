@@ -9,6 +9,9 @@ import { loginGuard } from './guards/login.guard';
 import { FormComponent } from './components/usuarios/form.component';
 import { UsuarioComponent } from './components/usuarios/usuarios.component';
 import { ClienteComponent } from './page/cliente/cliente.component';
+import { FormUcComponent } from './components/usu-carrera/form-uc.component';
+import { FormUUComponent } from './components/usu-unidad/form-uu.component';
+import { GeneralListComponent } from './components/general-list/general-list.component';
 
 
 
@@ -20,6 +23,10 @@ const routes: Routes = [
 
   {path: 'usuarios/form', component: FormComponent },
   {path: 'usuarios', component: UsuarioComponent },
+  { path: 'usuCarrera/form', component: FormUcComponent },
+  { path: 'usuUnidad/form', component: FormUUComponent },
+  { path: 'listado', component: GeneralListComponent },
+
   {
     path: '',
     component: MenuComponent,

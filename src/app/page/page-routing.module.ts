@@ -14,6 +14,7 @@ import { RegistroCarrerasComponent } from '../components/registro-carreras/regis
 import { RegistroUnidadComponent } from '../components/registro-unidad/registro-unidad.component';
 import { UsuarioComponent } from '../components/usuarios/usuarios.component';
 import { EstadisticasComponent } from '../components/estadisticas/estadisticas.component';
+import { GeneralListComponent } from '../components/general-list/general-list.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,8 @@ const routes: Routes = [
 
     { path: 'unidad', component: 
       DocUnidadComponent },
+      { path: 'listado', component: GeneralListComponent },
+
 
       { path: 'registro-carreras', component:
          RegistroCarrerasComponent },

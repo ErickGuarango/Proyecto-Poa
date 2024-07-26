@@ -26,7 +26,16 @@ import { FormComponent } from './components/usuarios/form.component';
 import { DocUnidadComponent } from './components/doc-unidad/doc-unidad.component';
 import { ClienteComponent } from './page/cliente/cliente.component';
 
+import { FormUUComponent } from './components/usu-unidad/form-uu.component';
+import { GeneralListComponent } from './components/general-list/general-list.component';
+import { FormUcComponent } from './components/usu-carrera/form-uc.component';
 
+import { UsuCarreraComponent } from './components/usu-carrera/usu-carrera.component';
+import { UsuUnidadComponent } from './components/usu-unidad/usu-unidad.component';
+
+import { CarreraService } from './service/carrera.service';
+
+import { UsuCarreraService } from './components/usu-carrera/usu-carrera.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +50,12 @@ import { ClienteComponent } from './page/cliente/cliente.component';
    // NuevoComponent,
    
     LoginComponent,
-    
+    UsuCarreraComponent,
+ UsuUnidadComponent,
+ FormUcComponent,
+ FormUUComponent,
+ GeneralListComponent,
+
     EvaluacionComponent,
    // RegistroDocenteComponent, 
     RegistroCarrerasComponent,
@@ -62,7 +76,8 @@ import { ClienteComponent } from './page/cliente/cliente.component';
     
     // PageModule // Descomentarlo si es necesario
   ],
-  providers: [UsuarioService,RolesService],
+  providers: [UsuarioService,RolesService,UsuCarreraService,
+    CarreraService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
