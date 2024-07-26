@@ -22,6 +22,7 @@ export class RegistroUnidadComponent implements OnInit {
     coordinacion: '',
     director: ''
   };
+  
 
   constructor(private unidadService: UnidadService) {}
 

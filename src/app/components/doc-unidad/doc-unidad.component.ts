@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { ProyectoService } from './proyecto.service';
+import { Proyecto } from './proyecto';
+import { ObjetivosOperativosUnidad } from './objetivos-operativos-unidad';
+import { ObjetivosOperativosUnidadService } from './objetivos-operativos-unidad.service';
+import { ActividadesUnidadService } from './actividades-unidad.service';
+import { ActividadesUnidad } from './actividades-unidad';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-doc-unidad',
@@ -6,69 +13,163 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-unidad.component.css']
 })
 export class DocUnidadComponent implements OnInit {
-  private activityCounter: number = 1; // Contador para las actividades
-  public rows: any[] = []; // Array para almacenar las filas de la tabla
+  public proyecto: Proyecto = new Proyecto();
+  public unidad: string = '';
+  public periodo: string = '';
+  private activityCounter: number = 1;
+  public sections: any[] = [];
+  public actividades: ActividadesUnidad[] = [];
 
-  constructor() {}
+  constructor(
+    private proyectoService: ProyectoService,
+    private objetivoOperativoService: ObjetivosOperativosUnidadService,
+    private actividadesUnidadService: ActividadesUnidadService
+  ) {}
 
   ngOnInit(): void {
-    // Inicializar la tabla vacía al cargar la vista
     this.clearTable();
 
-    // Añadir el evento de clic al botón "Nuevo"
     const nuevoButton = document.getElementById('nuevoButton');
     if (nuevoButton) {
-      nuevoButton.addEventListener('click', () => this.addSingleRowWithReset());
+      nuevoButton.addEventListener('click', () => this.addNewSection());
     }
 
-    // Añadir el evento de clic al botón "+"
     const addRowButton = document.getElementById('addRowButton');
     if (addRowButton) {
-      addRowButton.addEventListener('click', () => this.addMultipleRows());
+      addRowButton.addEventListener('click', () => this.addRow());
     }
   }
 
-  // Función para limpiar la tabla
   clearTable(): void {
-    this.rows = []; // Limpiar el array de filas
-    this.activityCounter = 1; // Reiniciar el contador
+    this.sections = [];
+    this.activityCounter = 1;
   }
 
-  // Función para agregar una fila y limpiar la tabla primero
-  addSingleRowWithReset(): void {
-    this.clearTable(); // Limpiar la tabla
-    this.addRow(); // Agregar una fila
+  addNewSection(): void {
+    const newSection = {
+      estrategia: this.proyecto.estrategia,
+      objetivoOperativo: '',
+      rows: [{ counter: this.activityCounter }]
+    };
+    this.sections.push(newSection);
+    this.activityCounter++;
   }
 
-  // Función para agregar múltiples filas si ya hay al menos una fila en la tabla
-  addMultipleRows(): void {
-    if (this.rows.length > 0) { // Verificar si ya hay filas
-      this.addRow(); // Agregar solo una fila
+  addRow(): void {
+    if (this.sections.length > 0) {
+      const currentSection = this.sections[this.sections.length - 1];
+      currentSection.rows.push({ counter: this.activityCounter });
+      this.activityCounter++;
     } else {
-      alert('Debe haber al menos una fila en la tabla antes de agregar más filas.');
+      alert('Debe haber al menos una sección antes de agregar filas.');
     }
   }
-  
 
-  // Función para agregar una nueva fila
-  private addRow(): void {
-    this.rows.push({
-      counter: this.activityCounter,
-      // Aquí puedes agregar más datos si es necesario
+  removeRow(sectionIndex: number, rowIndex: number): void {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminarlo!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.sections[sectionIndex].rows.splice(rowIndex, 1);
+        this.reorderRows(sectionIndex);
+        Swal.fire(
+          'Eliminado!',
+          'La actividad ha sido eliminada.',
+          'success'
+        );
+      }
     });
-    this.activityCounter++; // Incrementar el contador para la próxima fila
   }
 
-  // Función para eliminar una fila y reordenar las demás
-  removeRow(index: number): void {
-    this.rows.splice(index, 1); // Eliminar la fila en la posición del índice proporcionado
-    this.reorderRows(); // Reordenar las filas restantes
+  removeSection(sectionIndex: number): void {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: "¡No podrás revertir esto!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminarlo!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.sections.splice(sectionIndex, 1);
+        Swal.fire(
+          'Eliminado!',
+          'La sección ha sido eliminada.',
+          'success'
+        );
+      }
+    });
   }
 
-  // Función para reordenar las filas de la tabla
-  private reorderRows(): void {
-    this.rows.forEach((row, index) => {
-      row.counter = index + 1; // Ajustar el número de actividad
+  private reorderRows(sectionIndex: number): void {
+    this.sections[sectionIndex].rows.forEach((row: any, index: number) => {
+      row.counter = index + 1;
     });
+  }
+
+  saveObjetivoOperativo(): void {
+    this.proyectoService.createProyecto(this.proyecto).subscribe(
+      proyectoResponse => {
+        console.log('Proyecto creado:', proyectoResponse);
+        this.sections.forEach(section => {
+          const objetivoOperativo = new ObjetivosOperativosUnidad();
+          objetivoOperativo.proyecto = proyectoResponse;
+          objetivoOperativo.descripcion = section.objetivoOperativo;
+          this.objetivoOperativoService.createObjetivoOperativo(objetivoOperativo).subscribe(
+            objetivoOperativoResponse => {
+              console.log('Objetivo Operativo creado:', objetivoOperativoResponse);
+              this.saveActividades(section, objetivoOperativoResponse);
+            },
+            error => {
+              console.error('Error al crear el objetivo operativo:', error);
+            }
+          );
+        });
+        Swal.fire(
+          'Guardado!',
+          'El objetivo operativo ha sido guardado con éxito.',
+          'success'
+        ).then(() => {
+          this.clearTable(); // Llamada para limpiar la tabla después de guardar
+        });
+      },
+      error => {
+        console.error('Error al crear el proyecto:', error);
+        Swal.fire(
+          'Error!',
+          'Hubo un problema al guardar el objetivo operativo.',
+          'error'
+        );
+      }
+    );
+  }
+
+  private saveActividades(section: any, objetivoOperativo: ObjetivosOperativosUnidad): void {
+    for (let row of section.rows) {
+      const actividad = new ActividadesUnidad();
+      actividad.descripcion = (document.querySelector(`#actividadDescripcion${row.counter}`) as HTMLInputElement).value;
+      actividad.responsable = (document.querySelector(`#actividadResponsable${row.counter}`) as HTMLInputElement).value;
+      actividad.plazo = new Date((document.querySelector(`#actividadPlazo${row.counter}`) as HTMLInputElement).value);
+      actividad.meta = parseInt((document.querySelector(`#actividadMeta${row.counter}`) as HTMLInputElement).value, 10);
+      actividad.recFinIsta = parseFloat((document.querySelector(`#actividadRecFinIsta${row.counter}`) as HTMLInputElement).value);
+      actividad.recFinAutogestion = parseFloat((document.querySelector(`#actividadRecFinAutogestion${row.counter}`) as HTMLInputElement).value);
+      actividad.objetivoOperativo = objetivoOperativo;
+
+      this.actividadesUnidadService.createActividad(actividad).subscribe(
+        actividadResponse => {
+          console.log('Actividad creada:', actividadResponse);
+        },
+        error => {
+          console.error('Error al crear la actividad:', error);
+        }
+      );
+    }
   }
 }
