@@ -15,9 +15,16 @@ import { RegistroUnidadComponent } from '../components/registro-unidad/registro-
 import { UsuarioComponent } from '../components/usuarios/usuarios.component';
 import { EstadisticasComponent } from '../components/estadisticas/estadisticas.component';
 import { GeneralListComponent } from '../components/general-list/general-list.component';
+import { UnidadComponent } from '../components/reportes/unidad.component';
 
 
 const routes: Routes = [
+
+  
+  {
+    path: 'reportes',
+    component: UnidadComponent
+  },
 
   {
     path: 'estadisticas',

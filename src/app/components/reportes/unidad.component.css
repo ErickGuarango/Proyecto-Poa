@@ -1,32 +1,56 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+  overflow-y: auto; /* Added scrollbar */
 }
 
-.table1 {
+.main-container {
+  border: 2px solid #43a4ff;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  margin: 20px;
+  margin-bottom: 20px; /* Consistent margin */
+  overflow-y: auto; /* Added scrollbar */
+  max-height: calc(100vh - 40px); /* Adjust to fit within the viewport */
+}
+
+.title, .subtitle {
+  color: #1b3d5d;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Added scrollbar */
+  max-height: 300px; /* Adjust as needed */
+  margin-bottom: 20px;
+}
+
+.table1, .table2 {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 30px;
-  
-}
-.table2 {
-  width: 30%;
-  border-collapse: collapse;
-  margin-bottom: 30px;
-  
 }
 
-th, td {
-  border: 1px solid #000;
+.table1 th, .table1 td, .table2 th, .table2 td {
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-.main{
-  background-color:bisque;
+.main {
+  background-color: bisque;
   color: #000000;
 }
 
-.submain{
+.submain {
   background-color: #1b3d5d;
   color: #d9d9d9;
 }
@@ -36,54 +60,40 @@ th, td {
   font-weight: bold;
 }
 
-.objective {
-  background-color: #d9d9d9;
-  font-weight: bold;
-  text-align: left;
-}
-
-.medium{
+.medium {
   background-color: #e7d802;
   color: #1b3d5d;
   font-size: 20px;
 }
 
-.down{
+.down {
   background-color: #b49b0f;
   color: #1b3d5d;
   font-size: 20px;
 }
 
-.up{
+.up {
   background-color: #08ba3a;
   color: #1b3d5d;
   font-size: 20px;
 }
 
-.none{
+.none {
   background-color: red;
 }
 
-.title{
-  color: #1b3d5d;
-  text-align: center;
-}
-
-.subtitle{
-  color: #1b3d5d;
-  text-align: center;
-}
-
-.total{
+.total {
   background-color: #1b3d5d;
   color: #d9d9d9;
 }
 
-/* css para diagrama pastel */
 .chart-container {
   width: 50%;
   margin: 0 auto;
   padding: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #myPieChart {

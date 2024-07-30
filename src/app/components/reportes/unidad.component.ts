@@ -1,18 +1,19 @@
-// unidad.component.ts
 import { Component, AfterViewInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
-  selector: 'app-unidad',
+  selector: 'app-reportes',
   templateUrl: './unidad.component.html',
   styleUrls: ['./unidad.component.css']
 })
 export class UnidadComponent implements AfterViewInit {
   ngAfterViewInit() {
-    const ctx = document.getElementById('myPieChart') as HTMLCanvasElement;
+    this.createPieChart();
+  }
 
-    //recuerda instalar npm install chart.js
-    //para el funcionamiento del pastel
+  createPieChart() {
+    const ctx = document.getElementById('myPieChart') as HTMLCanvasElement;
+    
     new Chart(ctx, {
       type: 'pie',
       data: {
