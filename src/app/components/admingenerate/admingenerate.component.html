@@ -1,0 +1,45 @@
+<div class="main-container">
+  <div class="container">
+    <div class="registro-marco">
+      <!-- Sección del Formulario -->
+      <div class="form-container">
+        <p class="form-title">Crear Administrador</p>
+        <form (ngSubmit)="create()" #adminForm="ngForm">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" [(ngModel)]="usuario.apellido" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" [(ngModel)]="usuario.usuario" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="email" id="correo" name="correo" [(ngModel)]="usuario.correo" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" [(ngModel)]="usuario.contrasena" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="usuario.f_nacimiento" class="input-rounded" required>
+          </div>
+          <div class="form-group">
+            <label for="tipoEvaluador">Tipo de Administrador</label>
+            <select id="tipoEvaluador" name="tipoEvaluador" [(ngModel)]="opcion" class="input-rounded" required>
+              <option value="" disabled selected>Seleccionar tipo</option>
+              <option value="carrera">Carrera</option>
+              <option value="unidad">Unidad</option>
+            </select>
+          </div>
+          <button type="submit" class="button-agregar">Crear Administrador</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

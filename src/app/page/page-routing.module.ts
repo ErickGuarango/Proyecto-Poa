@@ -16,6 +16,8 @@ import { UsuarioComponent } from '../components/usuarios/usuarios.component';
 import { EstadisticasComponent } from '../components/estadisticas/estadisticas.component';
 import { GeneralListComponent } from '../components/general-list/general-list.component';
 import { UnidadComponent } from '../components/reportes/unidad.component';
+import { AdmingenerateComponent } from '../components/admingenerate/admingenerate.component';
+import { EvaluatorgenerateComponent } from '../components/evaluatorgenerate/evaluatorgenerate.component';
 
 
 const routes: Routes = [
@@ -57,6 +59,16 @@ const routes: Routes = [
         UsuarioComponent },
          { path: 'registro-unidad', component:
           RegistroUnidadComponent },
+
+          { path: 'admingenerate', component:
+            AdmingenerateComponent },
+
+            { path: 'evaluatorgenerate', component:
+              EvaluatorgenerateComponent},
+     
+   
+
+          
          
    
 

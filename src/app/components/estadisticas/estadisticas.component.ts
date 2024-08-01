@@ -62,6 +62,7 @@ export class EstadisticasComponent implements OnInit {
       });
     }
   }
+  
 
   crearGraficoPastel(): void {
     const ctx = document.getElementById('pieChart') as HTMLCanvasElement;

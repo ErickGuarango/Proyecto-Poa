@@ -36,6 +36,8 @@ import { UsuUnidadComponent } from './components/usu-unidad/usu-unidad.component
 import { CarreraService } from './service/carrera.service';
 
 import { UsuCarreraService } from './components/usu-carrera/usu-carrera.service';
+import { AdmingenerateComponent } from './components/admingenerate/admingenerate.component';
+import { EvaluatorgenerateComponent } from './components/evaluatorgenerate/evaluatorgenerate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +65,8 @@ import { UsuCarreraService } from './components/usu-carrera/usu-carrera.service'
  DocUnidadComponent,
  UsuarioComponent,
  FormComponent,
+ AdmingenerateComponent,
+ EvaluatorgenerateComponent
 
   // Asegúrate de declarar tu componente aquí
 
