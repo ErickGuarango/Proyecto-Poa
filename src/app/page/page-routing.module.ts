@@ -20,6 +20,7 @@ import { AdmingenerateComponent } from '../components/admingenerate/admingenerat
 import { EvaluatorgenerateComponent } from '../components/evaluatorgenerate/evaluatorgenerate.component';
 
 
+
 const routes: Routes = [
 
   

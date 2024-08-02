@@ -6,6 +6,16 @@
         <summary>ADMIN</summary>
 
         <li>
+          <button routerLink="/app/admingenerate" routerLinkActive="underline" (click)="activateButton($event)">
+            🗂 Crear admin
+          </button>
+        </li>
+        <li>
+          <button routerLink="/app/evaluatorgenerate" routerLinkActive="underline" (click)="activateButton($event)">
+            🗂 Crear Evaluador
+          </button>
+        </li>
+        <li>
           <button routerLink="/app/listado" routerLinkActive="underline" (click)="activateButton($event)">
             🗂 Lista General Coordinacion
           </button>

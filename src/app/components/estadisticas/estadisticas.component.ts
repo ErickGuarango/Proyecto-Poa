@@ -11,14 +11,14 @@ Chart.register(...registerables);
 })
 export class EstadisticasComponent implements OnInit {
   datosEstadisticos = [
-    { nombre: 'Dato 1', valor: 10 },
-    { nombre: 'Dato 2', valor: 20 },
-    { nombre: 'Dato 3', valor: 30 },
+    { nombre: 'Docentes Carreras', valor: 10 },
+    { nombre: 'Docentes Unidades', valor: 15 },
+    { nombre: 'Administradores', valor: 5 },
   ];
 
   datosPastel = [
-    { nombre: 'Unidades', valor: 50 },
-    { nombre: 'Carreras', valor: 75 }
+    { nombre: 'Unidades', valor: 10 },
+    { nombre: 'Carreras', valor: 15 }
   ];
 
   constructor() {}

@@ -15,15 +15,14 @@ export class AuthGuard implements CanActivate {
     const user = this.authService.getCurrentUser();
     if (user) {
       const role = user.rol.nombre;
-      // Verifica si next.data está definido antes de acceder a roles usando la notación de corchetes
-      if (next.data && next.data['roles'] && next.data['roles'].indexOf(role) === -1) {
+      const roles = next.data['roles'] as Array<string>;
+      if (roles && roles.indexOf(role) === -1) {
         // Redirige si el rol del usuario no está autorizado para la ruta
         this.authService.redirectUser(role);
         return false;
       }
       return true;
     }
-
     // Redirige a la página de login si no hay usuario logueado
     this.router.navigate(['/login']);
     return false;

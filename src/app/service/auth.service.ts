@@ -10,7 +10,6 @@ export class AuthService {
   constructor(private router: Router) { }
 
   login(user: any) {
-    // Suponiendo que obtienes el usuario y su rol después de un inicio de sesión exitoso
     this.currentUser = user;
     localStorage.setItem('currentUser', JSON.stringify(user));
     this.redirectUser(user.rol.nombre);
@@ -31,10 +30,10 @@ export class AuthService {
 
   redirectUser(role: string) {
     switch (role) {
-      case 'DOCENTE UNIDAD':
+      case 'DOCENTE_UNI':
         this.router.navigate(['/app/unidad']);
         break;
-      case 'DOCENTE CARRERA':
+      case 'DOCENTE_CARRE':
         this.router.navigate(['/app/carrera']);
         break;
       case 'EVALUADOR':
